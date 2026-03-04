@@ -1,37 +1,57 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, AuthContext } from './context/AuthContext';
-import { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
-// Pages
+// Importing your Architect-level pages
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import AdminBoard from './pages/AdminBoard';
+import ReportIssue from './pages/ReportIssue';
+import AdminFeed from './pages/AdminFeed';
+import LostFound from './pages/LostFound';
 import Leaderboard from './pages/Leaderboard';
-import Layout from './components/Layout';
-
-const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
-  if (loading) return null;
-  return user ? <Layout>{children}</Layout> : <Navigate to="/" />;
-};
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Login />} />
-          
-          {/* All these are now mapped to show the Sidebar */}
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="/admin" element={<ProtectedRoute><AdminBoard /></ProtectedRoute>} />
-          <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
-          
-          {/* Future routes like /map and /report go here */}
+          <Route path="/signup" element={<Signup />} />
+
+          {/* Student Routes */}
+          <Route path="/dashboard" element={
+            <ProtectedRoute allowedRoles={['Student']}>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/report" element={
+            <ProtectedRoute allowedRoles={['Student']}>
+              <ReportIssue />
+            </ProtectedRoute>
+          } />
+          <Route path="/leaderboard" element={
+            <ProtectedRoute allowedRoles={['Student', 'Admin']}>
+              <Leaderboard />
+            </ProtectedRoute>
+          } />
+
+          {/* Admin Exclusive Routes */}
+          <Route path="/admin" element={
+            <ProtectedRoute allowedRoles={['Admin']}>
+              <AdminFeed />
+            </ProtectedRoute>
+          } />
+
+          {/* Community Features */}
+          <Route path="/lost-found" element={
+            <ProtectedRoute>
+              <LostFound />
+            </ProtectedRoute>
+          } />
         </Routes>
       </Router>
     </AuthProvider>
   );
 }
-
-export default App;

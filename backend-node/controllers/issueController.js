@@ -1,9 +1,11 @@
 const Activity = require('../models/Activity');
+const User = require('../models/User'); // For updating Impact Points
 const axios = require('axios');
+const { sendResolutionEmail } = require('../services/emailService'); // Automated Emailing
 
 // 1. Report Issue with AI Triage & Duplicate Check
 exports.reportIssue = async (req, res) => {
-  const { title, description, category, location, reporterId } = req.body;
+  const { title, description, category, location, reporterId, imageUrl } = req.body;
   try {
     const existing = await Activity.findOne({
       category,
@@ -17,31 +19,72 @@ exports.reportIssue = async (req, res) => {
       return res.status(200).json({ duplicate: true, issueId: existing._id });
     }
 
-    // Call Python AI for Priority
-    const aiRes = await axios.post('http://localhost:8000/analyze-priority', { text: description });
+    // Call Python AI for Priority (Multi-modal ML Classifier)
+    const aiRes = await axios.post('http://localhost:8000/analyze-priority', { 
+      text: description,
+      image: imageUrl // Inclusion of image evidence for AI
+    });
     
     const newIssue = new Activity({
-      title, description, category, location,
+      title, description, category, location, imageUrl,
       reporter: reporterId,
-      priority: aiRes.data.priority
+      priority: aiRes.data.priority || 'Low'
     });
 
     await newIssue.save();
+    
+    // Real-Time Update for Admin Dashboard
     req.app.get('socketio').emit('new-issue', newIssue);
+    
     res.status(201).json({ duplicate: false, issue: newIssue });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 
-// 2. Upvote Logic
+// 2. Resolve Issue (Triggers Gamification & Emailing)
+exports.resolveIssue = async (req, res) => {
+  const { issueId } = req.params;
+  try {
+    const issue = await Activity.findByIdAndUpdate(
+      issueId, 
+      { status: 'Completed', resolvedAt: Date.now() }, 
+      { new: true }
+    ).populate('reporter');
+
+    // GAMIFICATION: Award Impact Points to Reporter
+    const pointsToAward = issue.priority === 'High' ? 50 : 20;
+    await User.findByIdAndUpdate(issue.reporter._id, {
+      $inc: { impactPoints: pointsToAward }
+    });
+
+    // AUTOMATED EMAILING: Send Digital Receipt
+    await sendResolutionEmail(issue.reporter.email, {
+      title: issue.title,
+      receiptId: issue._id,
+      points: pointsToAward
+    });
+
+    // Real-Time Notification for User Dashboard
+    req.app.get('socketio').emit(`update-${issue.reporter._id}`, {
+      message: `Issue Resolved! You earned ${pointsToAward} points.`,
+      type: 'impact'
+    });
+
+    res.status(200).json({ success: true, issue });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// 3. Upvote Logic (Community Escalation)
 exports.upvoteIssue = async (req, res) => {
   const { issueId, userId } = req.body;
   try {
     const issue = await Activity.findById(issueId);
     if (!issue.upvotes.includes(userId)) {
       issue.upvotes.push(userId);
-      // Auto-escalate if upvotes > 5
+      // Auto-escalate to "Highest Priority" if crowd-verified
       if (issue.upvotes.length > 5) issue.priority = 'High';
       await issue.save();
     }

@@ -21,6 +21,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = await API.post('/auth/signup', formData);
+      console.log(res.data);
       login(res.data.user, res.data.token);
       navigate(formData.role === 'Admin' ? '/admin' : '/dashboard');
     } catch (err) {

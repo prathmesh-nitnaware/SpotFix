@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# build / dependencies
+node_modules/
+dist/
+dist-ssr/
+build/
+
+# Vite
+.vite/
+
+# env 
+.env
+.env.local
+
+# system
+.DS_Store

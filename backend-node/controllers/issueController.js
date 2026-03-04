@@ -19,12 +19,16 @@ exports.reportIssue = async (req, res) => {
       return res.status(200).json({ duplicate: true, issueId: existing._id });
     }
 
+    console.log("does work1")
+
     // Call Python AI for Priority (Multi-modal ML Classifier)
-    const aiRes = await axios.post('http://localhost:8000/analyze-priority', { 
+    const aiRes = await axios.post('http://127.0.0.1:8000/analyze-priority', {
       text: description,
-      image: imageUrl // Inclusion of image evidence for AI
+      image_url: imageUrl // Inclusion of image evidence for AI
     });
-    
+    console.log("Does work2");
+
+
     const newIssue = new Activity({
       title, description, category, location, imageUrl,
       reporter: reporterId,
@@ -32,12 +36,13 @@ exports.reportIssue = async (req, res) => {
     });
 
     await newIssue.save();
-    
+
     // Real-Time Update for Admin Dashboard
     req.app.get('socketio').emit('new-issue', newIssue);
-    
+
     res.status(201).json({ duplicate: false, issue: newIssue });
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({ error: err.message });
   }
 };
@@ -47,8 +52,8 @@ exports.resolveIssue = async (req, res) => {
   const { issueId } = req.params;
   try {
     const issue = await Activity.findByIdAndUpdate(
-      issueId, 
-      { status: 'Completed', resolvedAt: Date.now() }, 
+      issueId,
+      { status: 'Completed', resolvedAt: Date.now() },
       { new: true }
     ).populate('reporter');
 
@@ -89,6 +94,17 @@ exports.upvoteIssue = async (req, res) => {
       await issue.save();
     }
     res.status(200).json(issue);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// 4. Get User's Issues (For Dashboard)
+exports.getUserIssues = async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const issues = await Activity.find({ reporter: userId }).sort({ createdAt: -1 });
+    res.status(200).json(issues);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

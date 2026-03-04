@@ -10,6 +10,7 @@ import ReportIssue from './pages/ReportIssue';
 import AdminFeed from './pages/AdminFeed';
 import LostFound from './pages/LostFound';
 import Leaderboard from './pages/Leaderboard';
+import IssueMap from './pages/IssueMap';
 
 function App() {
   return (
@@ -44,6 +45,13 @@ function App() {
             </ProtectedRoute>
           } />
 
+          {/* Campus Features */}
+          <Route path="/map" element={
+            <ProtectedRoute>
+              <IssueMap />
+            </ProtectedRoute>
+          } />
+
           {/* Community Features */}
           <Route path="/lost-found" element={
             <ProtectedRoute>
@@ -52,7 +60,7 @@ function App() {
           } />
         </Routes>
       </Router>
-    </AuthProvider>
+    </AuthProvider >
   );
 }
 

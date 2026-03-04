@@ -4,15 +4,18 @@ from processors.priority_engine import analyze_issue
 
 router = APIRouter()
 
+from typing import Optional
+
 class IssueInput(BaseModel):
     text: str
-    image_url: str = None
+    image_url: Optional[str] = None
 
 @router.post("/analyze-priority")
 async def analyze_priority(data: IssueInput):
     """
     Analyzes issue description to determine ML Priority.
     """
+    print(data)
     try:
         result = analyze_issue(data.text, data.image_url)
         return result

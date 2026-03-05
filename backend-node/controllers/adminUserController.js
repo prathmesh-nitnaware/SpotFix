@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/user');
 
 /**
  * Fetches all users with their current Impact Ranks.

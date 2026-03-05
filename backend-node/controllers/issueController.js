@@ -1,5 +1,5 @@
 const Activity = require('../models/Activity');
-const User = require('../models/User'); // For updating Impact Points
+const User = require('../models/user'); // For updating Impact Points
 const axios = require('axios');
 const { sendResolutionEmail } = require('../services/emailService'); // Automated Emailing
 

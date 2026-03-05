@@ -1,5 +1,5 @@
 const Activity = require('../models/Activity'); // Reusing Activity model with 'Resource' type
-const User = require('../models/User');
+const User = require('../models/user');
 
 /**
  * Handles "Need" reporting instead of fault reporting.

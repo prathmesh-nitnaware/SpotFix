@@ -4,28 +4,26 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
+
 const authRoutes = require('./routes/authRoutes');
 const issueRoutes = require('./routes/issueRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-
+const superAdminRoutes = require('./routes/superAdminRoutes'); // New route
 
 // Load environment variables dynamically
 dotenv.config();
-
 const app = express();
 const server = http.createServer(app);
+const io = new Server(server, { cors: { origin: "*" } });
 
-// Socket.io Setup
-const io = new Server(server, {
-  cors: { origin: "*" }
-});
-
-// Middleware
 app.use(cors());
 app.use(express.json());
+
+// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/issues', issueRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/superadmin', superAdminRoutes); // Registered for Principal tasks
 
 app.set('socketio', io);
 

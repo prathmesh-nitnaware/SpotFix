@@ -21,10 +21,12 @@ except Exception as e:
     model = None
     vectorizer = None
 
-def analyze_issue(text: str, image_url: str = None, category: str = "General", active_reports: list = []):
+def analyze_issue(text: str, image_url: str = None, category: str = "General", active_reports: list = None):
     """
     The Architects' Final Core: Duplicate Check -> ML Text Analysis -> Visual Fusion -> Predictive Timing.
     """
+    if active_reports is None:
+        active_reports = []
     
     # 3. DUPLICATE DETECTION (Visual Fingerprinting)
     # Uses pHash to ensure the Admin Dashboard isn't flooded with redundant issues

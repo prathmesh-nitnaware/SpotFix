@@ -39,8 +39,9 @@ const Dashboard = () => {
         const recentPulse = pulseRes.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5);
         setPulseFeed(recentPulse);
 
-        // Leaderboard Top 5
-        const top5 = leadersRes.data.sort((a, b) => b.impactPoints - a.impactPoints).slice(0, 5);
+        // Leaderboard Top 5 (Students Only)
+        const studentLeaders = leadersRes.data.filter(u => !['Admin', 'SuperAdmin', 'Staff'].includes(u.role));
+        const top5 = studentLeaders.sort((a, b) => b.impactPoints - a.impactPoints).slice(0, 5);
         setLeaderboard(top5);
 
       } catch (err) {
@@ -96,7 +97,7 @@ const Dashboard = () => {
     if (activeTab === 'In Progress') return issue.status === 'Processing' || issue.status === 'Working';
     if (activeTab === 'Resolved') return issue.status === 'Completed' || issue.status === 'Resolved';
     return true;
-  });
+  }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen pb-20 font-sans">
@@ -225,20 +226,15 @@ const Dashboard = () => {
         </motion.div>
 
         {/* 3. QUICK ACTION BAR */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
-          <button onClick={() => navigate('/report')} className="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl transition-all shadow-lg shadow-blue-200 group">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <button onClick={() => navigate('/report')} className="flex flex-col items-center justify-center p-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl transition-all shadow-lg shadow-blue-200 group">
             <Plus size={24} className="mb-2 group-hover:scale-110 transition-transform" />
             <span className="font-bold text-sm">Report Issue</span>
           </button>
 
-          <button className="flex flex-col items-center justify-center p-4 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-2xl transition-all shadow-sm group">
-            <Mic size={24} className="mb-2 text-indigo-500 group-hover:scale-110 transition-transform" />
-            <span className="font-bold text-sm text-center leading-tight">Report by<br />Voice</span>
-          </button>
-
-          <button onClick={() => navigate('/map')} className="flex flex-col items-center justify-center p-4 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-2xl transition-all shadow-sm group">
-            <MapIcon size={24} className="mb-2 text-emerald-500 group-hover:scale-110 transition-transform" />
-            <span className="font-bold text-sm text-center leading-tight">Campus<br />Map</span>
+          <button onClick={() => navigate('/leaderboard')} className="flex flex-col items-center justify-center p-4 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-2xl transition-all shadow-sm group">
+            <Trophy size={24} className="mb-2 text-yellow-500 group-hover:scale-110 transition-transform" />
+            <span className="font-bold text-sm text-center leading-tight">View<br />Leaderboard</span>
           </button>
 
           <button onClick={() => navigate('/lost-found')} className="flex flex-col items-center justify-center p-4 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-2xl transition-all shadow-sm group">
@@ -395,26 +391,6 @@ const Dashboard = () => {
           {/* RIGHT COL: MAP & PULSE & LEADERBOARD */}
           <div className="space-y-6">
 
-            {/* Campus Live Map (Mini) */}
-            <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden group">
-              <div className="flex justify-between items-center mb-4 relative z-10">
-                <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                  <MapIcon className="text-indigo-500" size={18} /> Campus Map
-                  <span className="flex h-2 w-2 relative"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span>
-                </h3>
-                <button className="text-[10px] font-black uppercase text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md">Expand</button>
-              </div>
-
-              {/* Mock Map Image Representation for UI purposes */}
-              <div className="h-40 bg-slate-100 rounded-2xl relative overflow-hidden group overflow-hidden border border-slate-200">
-                <div className="absolute inset-0 bg-[url('https://maps.wikimedia.org/osm-intl/15/23301/14187.png')] bg-cover bg-center opacity-60"></div>
-                {/* Heatmap Pins */}
-                <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-xl animate-pulse"></div>
-                <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-orange-400 rounded-full border-2 border-white shadow-xl"></div>
-                <div className="absolute bottom-1/4 left-1/2 w-3 h-3 bg-red-500 rounded-full border-2 border-white shadow-xl animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent"></div>
-              </div>
-            </div>
 
             {/* 🔥 Campus Pulse */}
             <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">

@@ -9,7 +9,7 @@ const issueRoutes = require('./routes/issueRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
 
-// Load environment variables
+// Load environment variables dynamically
 dotenv.config();
 
 const app = express();
@@ -30,24 +30,27 @@ app.use('/api/admin', adminRoutes);
 app.set('socketio', io);
 
 // --- SPOTFIX DATABASE CONNECTION ---
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  serverSelectionTimeoutMS: 5000 // Keep trying to send operations for 5 seconds
+})
   .then(() => {
     console.log('--------------------------------------');
     console.log('✅ PROJECT: SpotFix');
     console.log('✅ TEAM: The Architects');
     console.log('✅ STATUS: MongoDB Connected Successfully');
     console.log('--------------------------------------');
+
+    // Root Route
+    app.get('/', (req, res) => {
+      res.send('SpotFix API by The Architects is live.');
+    });
+
+    const PORT = process.env.PORT || 5000;
+    server.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
   })
   .catch((err) => {
-    console.error('❌ MongoDB Connection Error:', err);
+    console.error('❌ MongoDB Connection FATAL Error:', err);
+    process.exit(1); // Exit if DB fails to connect
   });
-
-// Root Route
-app.get('/', (req, res) => {
-  res.send('SpotFix API by The Architects is live.');
-});
-
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});

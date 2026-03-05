@@ -13,7 +13,8 @@ const Leaderboard = () => {
                 setLoading(true);
                 // Using the admin users endpoint which returns them sorted by impactPoints
                 const res = await API.get('/admin/users');
-                const sortedUsers = res.data.sort((a, b) => b.impactPoints - a.impactPoints);
+                const studentUsers = res.data.filter(u => !['Admin', 'SuperAdmin', 'Staff'].includes(u.role));
+                const sortedUsers = studentUsers.sort((a, b) => b.impactPoints - a.impactPoints);
                 setUsers(sortedUsers.slice(0, 10)); // Top 10 for the Hall of Fame
             } catch (err) {
                 console.error("Leaderboard Error:", err);

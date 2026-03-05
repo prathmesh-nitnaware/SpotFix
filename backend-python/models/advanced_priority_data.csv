@@ -1,0 +1,1001 @@
+description,priority,category
+Water tap is leaking in the Classroom 101,Medium,Plumbing
+Need extra Tube light for Reception,Low,Safety
+Water cooler needs repair in Washroom,Medium,Furniture
+Malfunctioning Window pane at Staff Room,Medium,IT/AV
+Please clean the Tube light in Parking Lot,Low,IT/AV
+Signage is flickering in Garden Area,Low,Electrical
+Emergency: Gas leak at Server Room,High,Electrical
+Immediate attention required: Gas leak - Main Auditorium,High,Furniture
+Critical Short circuit in the Main Auditorium,High,Furniture
+Minor Signage issue at Study Area,Low,Furniture
+The Chairs is slightly loose at Reception,Low,Electrical
+The Ceiling fan is not working properly at Placement Cell,Medium,Safety
+Emergency: Short circuit at Lab 402,High,Plumbing
+Immediate attention required: Live sparking wires - Main Auditorium,High,Safety
+Need extra Door handle for Reception,Low,Safety
+The Water tap is not working properly at Placement Cell,Medium,Safety
+The Door lock is not working properly at Seminar Hall,Medium,HVAC
+Curtains is flickering in Waiting Lounge,Low,IT/AV
+The Laboratory equipment is not working properly at Gymkhana,Medium,Furniture
+Minor Curtains issue at Reception,Low,Electrical
+Notice board is flickering in Parking Lot,Low,Furniture
+Window pane needs repair in Library,Medium,Safety
+Immediate attention required: Gas leak - Server Room,High,IT/AV
+Requesting Tube light in Reception,Low,Safety
+Need extra Whiteboard marker for Corridor,Low,Electrical
+Broken Ceiling fan in Staff Room,Medium,Electrical
+Door lock needs repair in Washroom,Medium,Furniture
+The Dustbins is slightly loose at Corridor,Low,IT/AV
+Immediate attention required: Stuck elevator - Server Room,High,Plumbing
+Window pane is leaking in the Classroom 101,Medium,Furniture
+The Notice board is slightly loose at Corridor,Low,IT/AV
+Live sparking wires is causing a hazard in Hostel Block A,High,Plumbing
+Emergency: Severe flooding at Server Room,High,Electrical
+Need extra Dustbins for Reception,Low,IT/AV
+Notice board is flickering in Parking Lot,Low,Plumbing
+Immediate attention required: Short circuit - Lab 402,High,IT/AV
+Severe flooding is causing a hazard in Main Auditorium,High,HVAC
+Immediate attention required: Short circuit - Hostel Block A,High,HVAC
+The Chairs is slightly loose at Corridor,Low,IT/AV
+Critical Gas leak in the Chemistry Wing,High,Furniture
+Minor Dustbins issue at Corridor,Low,Safety
+The Dustbins is slightly loose at Study Area,Low,HVAC
+Minor Curtains issue at Corridor,Low,Safety
+Dangerous Structural collapse near Chemistry Wing,High,Electrical
+Please clean the Curtains in Corridor,Low,IT/AV
+Please clean the Curtains in Garden Area,Low,IT/AV
+Ceiling fan needs repair in Placement Cell,Medium,HVAC
+Please clean the Notice board in Reception,Low,Electrical
+Dangerous Stuck elevator near Exam Hall,High,IT/AV
+The Door handle is slightly loose at Waiting Lounge,Low,IT/AV
+Requesting Dustbins in Reception,Low,Safety
+Projector is damaged in Library,Medium,Electrical
+Ceiling fan is leaking in the Washroom,Medium,IT/AV
+Signage is flickering in Parking Lot,Low,IT/AV
+Critical Live sparking wires in the Main Auditorium,High,Furniture
+Need extra Curtains for Reception,Low,HVAC
+Minor Notice board issue at Reception,Low,IT/AV
+Requesting Chairs in Study Area,Low,IT/AV
+Structural collapse detected at Canteen - SOS,High,HVAC
+Broken Ceiling fan in Gymkhana,Medium,IT/AV
+Door handle is flickering in Corridor,Low,Furniture
+Dangerous Live sparking wires near Lab 402,High,Electrical
+Water tap needs repair in Classroom 101,Medium,IT/AV
+Emergency: Broken chemical bottle at Lab 402,High,HVAC
+Broken Door lock in Gymkhana,Medium,Furniture
+Need extra Curtains for Study Area,Low,Plumbing
+Dangerous Broken chemical bottle near Hostel Block A,High,Safety
+Air conditioner needs repair in Library,Medium,HVAC
+Need extra Chairs for Study Area,Low,IT/AV
+Minor Tube light issue at Waiting Lounge,Low,HVAC
+Critical Stuck elevator in the Server Room,High,IT/AV
+Dangerous Stuck elevator near Lab 402,High,Electrical
+Critical Broken chemical bottle in the Exam Hall,High,Electrical
+Whiteboard marker is flickering in Parking Lot,Low,HVAC
+Need extra Whiteboard marker for Waiting Lounge,Low,HVAC
+Requesting Chairs in Reception,Low,HVAC
+The Air conditioner is not working properly at Seminar Hall,Medium,Safety
+Water tap needs repair in Seminar Hall,Medium,Plumbing
+Water tap needs repair in Seminar Hall,Medium,Furniture
+Short circuit is causing a hazard in Canteen,High,Plumbing
+Short circuit detected at Exam Hall - SOS,High,IT/AV
+Water cooler is damaged in Library,Medium,Electrical
+Need extra Tube light for Garden Area,Low,Plumbing
+Ceiling fan is leaking in the Gymkhana,Medium,Furniture
+Broken Door lock in Library,Medium,Furniture
+Door lock needs repair in Staff Room,Medium,HVAC
+Minor Whiteboard marker issue at Study Area,Low,HVAC
+WiFi Router is damaged in Library,Medium,Electrical
+Dangerous Structural collapse near Main Auditorium,High,HVAC
+The Notice board is slightly loose at Parking Lot,Low,HVAC
+Notice board is flickering in Garden Area,Low,Furniture
+Requesting Curtains in Parking Lot,Low,Safety
+Fire outbreak is causing a hazard in Exam Hall,High,HVAC
+Minor Notice board issue at Waiting Lounge,Low,Electrical
+Minor Chairs issue at Study Area,Low,Safety
+Need extra Door handle for Study Area,Low,HVAC
+Immediate attention required: Stuck elevator - Canteen,High,Safety
+Please clean the Curtains in Parking Lot,Low,Safety
+WiFi Router is leaking in the Gymkhana,Medium,Plumbing
+Laboratory equipment is leaking in the Seminar Hall,Medium,HVAC
+Malfunctioning Window pane at Seminar Hall,Medium,Safety
+Laboratory equipment is damaged in Classroom 101,Medium,IT/AV
+Emergency: Fire outbreak at Lab 402,High,HVAC
+Requesting Curtains in Study Area,Low,HVAC
+Air conditioner is leaking in the Placement Cell,Medium,HVAC
+Broken Window pane in Gymkhana,Medium,Furniture
+Window pane needs repair in Staff Room,Medium,IT/AV
+Need extra Tube light for Reception,Low,Furniture
+Structural collapse is causing a hazard in Server Room,High,Electrical
+Requesting Whiteboard marker in Study Area,Low,HVAC
+Critical Gas leak in the Canteen,High,IT/AV
+Live sparking wires is causing a hazard in Server Room,High,Safety
+Immediate attention required: Stuck elevator - Lab 402,High,HVAC
+The Signage is slightly loose at Waiting Lounge,Low,Furniture
+Need extra Chairs for Garden Area,Low,IT/AV
+The WiFi Router is not working properly at Staff Room,Medium,Electrical
+Water tap is leaking in the Washroom,Medium,Furniture
+Please clean the Dustbins in Study Area,Low,Electrical
+Fire outbreak detected at Hostel Block A - SOS,High,Furniture
+Malfunctioning Laboratory equipment at Seminar Hall,Medium,Furniture
+Broken WiFi Router in Classroom 101,Medium,IT/AV
+Chairs is flickering in Parking Lot,Low,Safety
+Broken Window pane in Placement Cell,Medium,HVAC
+Requesting Chairs in Study Area,Low,Electrical
+Need extra Whiteboard marker for Parking Lot,Low,IT/AV
+Please clean the Tube light in Garden Area,Low,Plumbing
+Broken Ceiling fan in Washroom,Medium,Electrical
+Requesting Signage in Garden Area,Low,HVAC
+Need extra Whiteboard marker for Waiting Lounge,Low,HVAC
+Water cooler is damaged in Classroom 101,Medium,IT/AV
+Tube light is flickering in Reception,Low,Furniture
+Door lock is damaged in Placement Cell,Medium,HVAC
+Malfunctioning WiFi Router at Classroom 101,Medium,Safety
+Dangerous Fire outbreak near Hostel Block A,High,Safety
+Laboratory equipment needs repair in Placement Cell,Medium,Safety
+Immediate attention required: Severe flooding - Hostel Block A,High,IT/AV
+The Projector is not working properly at Gymkhana,Medium,Plumbing
+Minor Tube light issue at Reception,Low,HVAC
+Water tap needs repair in Gymkhana,Medium,Plumbing
+The Chairs is slightly loose at Parking Lot,Low,HVAC
+The Signage is slightly loose at Waiting Lounge,Low,Safety
+The Laboratory equipment is not working properly at Gymkhana,Medium,Plumbing
+Door handle is flickering in Study Area,Low,Safety
+Need extra Signage for Garden Area,Low,Safety
+Immediate attention required: Short circuit - Lab 402,High,Safety
+The Door handle is slightly loose at Reception,Low,Plumbing
+Critical Stuck elevator in the Chemistry Wing,High,Plumbing
+The Signage is slightly loose at Parking Lot,Low,IT/AV
+Please clean the Chairs in Waiting Lounge,Low,Furniture
+Need extra Whiteboard marker for Parking Lot,Low,Plumbing
+Immediate attention required: Stuck elevator - Hostel Block A,High,Furniture
+Door lock needs repair in Seminar Hall,Medium,Furniture
+Dangerous Broken chemical bottle near Main Auditorium,High,HVAC
+Door lock is damaged in Classroom 101,Medium,HVAC
+Broken Water tap in Library,Medium,IT/AV
+Immediate attention required: Severe flooding - Server Room,High,Safety
+Requesting Dustbins in Corridor,Low,HVAC
+Dangerous Exposed high-voltage cable near Hostel Block A,High,IT/AV
+Exposed high-voltage cable detected at Hostel Block A - SOS,High,Plumbing
+Immediate attention required: Exposed high-voltage cable - Lab 402,High,Electrical
+Need extra Tube light for Parking Lot,Low,Safety
+Requesting Notice board in Waiting Lounge,Low,IT/AV
+Broken WiFi Router in Seminar Hall,Medium,IT/AV
+Please clean the Whiteboard marker in Reception,Low,Safety
+Dangerous Live sparking wires near Server Room,High,HVAC
+Dangerous Severe flooding near Chemistry Wing,High,IT/AV
+Broken chemical bottle is causing a hazard in Hostel Block A,High,Furniture
+Fire outbreak detected at Server Room - SOS,High,IT/AV
+Water cooler needs repair in Seminar Hall,Medium,Electrical
+Dangerous Structural collapse near Main Auditorium,High,HVAC
+Minor Signage issue at Study Area,Low,Furniture
+WiFi Router is damaged in Washroom,Medium,Electrical
+Critical Fire outbreak in the Exam Hall,High,Safety
+Dangerous Live sparking wires near Lab 402,High,IT/AV
+Curtains is flickering in Garden Area,Low,Furniture
+Dangerous Short circuit near Canteen,High,Safety
+Water tap needs repair in Classroom 101,Medium,Safety
+WiFi Router is leaking in the Staff Room,Medium,IT/AV
+Dangerous Structural collapse near Server Room,High,Electrical
+Window pane needs repair in Classroom 101,Medium,Plumbing
+Need extra Tube light for Study Area,Low,HVAC
+Need extra Chairs for Study Area,Low,IT/AV
+Short circuit is causing a hazard in Lab 402,High,Electrical
+Immediate attention required: Severe flooding - Lab 402,High,Safety
+Please clean the Dustbins in Waiting Lounge,Low,Furniture
+Projector is leaking in the Gymkhana,Medium,Furniture
+Laboratory equipment needs repair in Staff Room,Medium,HVAC
+Air conditioner is damaged in Placement Cell,Medium,IT/AV
+Malfunctioning Door lock at Library,Medium,Plumbing
+Minor Chairs issue at Reception,Low,Safety
+Emergency: Live sparking wires at Exam Hall,High,IT/AV
+Need extra Curtains for Waiting Lounge,Low,Plumbing
+The Curtains is slightly loose at Study Area,Low,IT/AV
+Requesting Curtains in Parking Lot,Low,Furniture
+Malfunctioning Water tap at Placement Cell,Medium,Electrical
+Broken Water tap in Gymkhana,Medium,Plumbing
+Malfunctioning Water tap at Washroom,Medium,Furniture
+The Tube light is slightly loose at Garden Area,Low,Safety
+Door lock needs repair in Gymkhana,Medium,IT/AV
+The Notice board is slightly loose at Garden Area,Low,IT/AV
+Dangerous Fire outbreak near Hostel Block A,High,Plumbing
+Dangerous Severe flooding near Server Room,High,HVAC
+The Signage is slightly loose at Waiting Lounge,Low,HVAC
+Malfunctioning Door lock at Placement Cell,Medium,Plumbing
+Door handle is flickering in Waiting Lounge,Low,HVAC
+Please clean the Curtains in Parking Lot,Low,Furniture
+The Water cooler is not working properly at Library,Medium,Safety
+Need extra Curtains for Parking Lot,Low,Furniture
+Laboratory equipment is damaged in Seminar Hall,Medium,HVAC
+The WiFi Router is not working properly at Placement Cell,Medium,Safety
+Water cooler needs repair in Library,Medium,HVAC
+Minor Door handle issue at Corridor,Low,Electrical
+Need extra Door handle for Study Area,Low,Electrical
+The Door lock is not working properly at Placement Cell,Medium,Safety
+Broken chemical bottle detected at Lab 402 - SOS,High,Plumbing
+Gas leak detected at Lab 402 - SOS,High,IT/AV
+The Signage is slightly loose at Study Area,Low,Electrical
+Short circuit detected at Main Auditorium - SOS,High,IT/AV
+Short circuit detected at Exam Hall - SOS,High,Electrical
+Dustbins is flickering in Parking Lot,Low,Furniture
+Critical Structural collapse in the Hostel Block A,High,HVAC
+Emergency: Structural collapse at Hostel Block A,High,Electrical
+Requesting Signage in Parking Lot,Low,Safety
+Short circuit is causing a hazard in Hostel Block A,High,HVAC
+Requesting Curtains in Reception,Low,Furniture
+Requesting Curtains in Reception,Low,HVAC
+Water cooler is leaking in the Classroom 101,Medium,Furniture
+Water tap is damaged in Seminar Hall,Medium,Furniture
+Critical Stuck elevator in the Exam Hall,High,IT/AV
+Dangerous Short circuit near Exam Hall,High,Furniture
+Requesting Signage in Reception,Low,IT/AV
+Broken chemical bottle is causing a hazard in Hostel Block A,High,Furniture
+Emergency: Structural collapse at Hostel Block A,High,HVAC
+The Air conditioner is not working properly at Classroom 101,Medium,Furniture
+Laboratory equipment is damaged in Classroom 101,Medium,Electrical
+Critical Severe flooding in the Lab 402,High,IT/AV
+Emergency: Exposed high-voltage cable at Hostel Block A,High,Safety
+Malfunctioning Air conditioner at Placement Cell,Medium,IT/AV
+Laboratory equipment is damaged in Staff Room,Medium,HVAC
+Requesting Chairs in Waiting Lounge,Low,Electrical
+Minor Curtains issue at Study Area,Low,Safety
+Immediate attention required: Fire outbreak - Chemistry Wing,High,Plumbing
+Please clean the Notice board in Garden Area,Low,Safety
+Signage is flickering in Garden Area,Low,Plumbing
+Need extra Chairs for Garden Area,Low,HVAC
+The Ceiling fan is not working properly at Gymkhana,Medium,IT/AV
+Severe flooding detected at Chemistry Wing - SOS,High,HVAC
+Need extra Dustbins for Reception,Low,Furniture
+Requesting Door handle in Reception,Low,Safety
+Severe flooding is causing a hazard in Exam Hall,High,Safety
+Emergency: Gas leak at Exam Hall,High,Furniture
+Malfunctioning Water cooler at Washroom,Medium,IT/AV
+Please clean the Curtains in Reception,Low,IT/AV
+Critical Stuck elevator in the Lab 402,High,HVAC
+The Curtains is slightly loose at Parking Lot,Low,Electrical
+Dangerous Severe flooding near Main Auditorium,High,HVAC
+The Water tap is not working properly at Gymkhana,Medium,Furniture
+Water tap is leaking in the Seminar Hall,Medium,Furniture
+Immediate attention required: Stuck elevator - Chemistry Wing,High,Safety
+Broken Projector in Placement Cell,Medium,Furniture
+Stuck elevator detected at Exam Hall - SOS,High,Electrical
+Immediate attention required: Stuck elevator - Chemistry Wing,High,HVAC
+Requesting Whiteboard marker in Study Area,Low,IT/AV
+Need extra Curtains for Study Area,Low,Electrical
+Stuck elevator is causing a hazard in Chemistry Wing,High,Electrical
+Requesting Curtains in Reception,Low,Furniture
+Broken Air conditioner in Staff Room,Medium,Safety
+Critical Broken chemical bottle in the Main Auditorium,High,Furniture
+Critical Structural collapse in the Chemistry Wing,High,Electrical
+Critical Short circuit in the Chemistry Wing,High,Furniture
+WiFi Router is leaking in the Gymkhana,Medium,Electrical
+Immediate attention required: Gas leak - Canteen,High,Safety
+Emergency: Severe flooding at Chemistry Wing,High,IT/AV
+Stuck elevator detected at Chemistry Wing - SOS,High,Plumbing
+Please clean the Signage in Waiting Lounge,Low,Electrical
+Water cooler needs repair in Gymkhana,Medium,Electrical
+Broken WiFi Router in Placement Cell,Medium,Plumbing
+Dangerous Gas leak near Canteen,High,IT/AV
+Live sparking wires detected at Chemistry Wing - SOS,High,Safety
+Signage is flickering in Study Area,Low,Safety
+Critical Live sparking wires in the Exam Hall,High,Electrical
+Requesting Whiteboard marker in Parking Lot,Low,Plumbing
+Critical Stuck elevator in the Lab 402,High,Furniture
+Please clean the Curtains in Reception,Low,Safety
+Broken Water tap in Library,Medium,IT/AV
+Minor Door handle issue at Waiting Lounge,Low,Safety
+Severe flooding detected at Exam Hall - SOS,High,Plumbing
+Water cooler is leaking in the Library,Medium,Electrical
+Water tap is damaged in Library,Medium,Furniture
+Requesting Curtains in Study Area,Low,Furniture
+WiFi Router needs repair in Classroom 101,Medium,HVAC
+Door lock needs repair in Gymkhana,Medium,IT/AV
+Broken Water tap in Placement Cell,Medium,Electrical
+Emergency: Short circuit at Server Room,High,IT/AV
+Need extra Curtains for Waiting Lounge,Low,HVAC
+The Dustbins is slightly loose at Reception,Low,IT/AV
+Immediate attention required: Short circuit - Server Room,High,IT/AV
+Dangerous Broken chemical bottle near Server Room,High,Furniture
+The Door lock is not working properly at Placement Cell,Medium,Plumbing
+Broken WiFi Router in Library,Medium,Safety
+Broken Air conditioner in Placement Cell,Medium,Furniture
+Laboratory equipment is leaking in the Seminar Hall,Medium,IT/AV
+Need extra Dustbins for Corridor,Low,Furniture
+WiFi Router is damaged in Washroom,Medium,Plumbing
+Laboratory equipment is damaged in Classroom 101,Medium,Electrical
+Need extra Signage for Corridor,Low,Electrical
+Severe flooding detected at Lab 402 - SOS,High,Safety
+Malfunctioning Water cooler at Library,Medium,Furniture
+Malfunctioning WiFi Router at Classroom 101,Medium,Furniture
+Emergency: Broken chemical bottle at Lab 402,High,Plumbing
+Critical Fire outbreak in the Lab 402,High,Plumbing
+Broken Window pane in Placement Cell,Medium,HVAC
+Malfunctioning Door lock at Classroom 101,Medium,Safety
+Door lock is damaged in Washroom,Medium,Safety
+Minor Tube light issue at Reception,Low,Furniture
+Please clean the Whiteboard marker in Reception,Low,Safety
+Please clean the Door handle in Reception,Low,HVAC
+Requesting Notice board in Corridor,Low,Plumbing
+Please clean the Curtains in Corridor,Low,Plumbing
+Critical Short circuit in the Hostel Block A,High,Furniture
+Emergency: Structural collapse at Chemistry Wing,High,Plumbing
+The Door handle is slightly loose at Study Area,Low,Safety
+Need extra Dustbins for Corridor,Low,Electrical
+Requesting Dustbins in Garden Area,Low,Safety
+Please clean the Curtains in Reception,Low,Safety
+Emergency: Gas leak at Main Auditorium,High,IT/AV
+Requesting Dustbins in Parking Lot,Low,IT/AV
+The Door handle is slightly loose at Waiting Lounge,Low,Plumbing
+The WiFi Router is not working properly at Washroom,Medium,Plumbing
+Malfunctioning Air conditioner at Placement Cell,Medium,Electrical
+Malfunctioning Air conditioner at Library,Medium,Electrical
+Structural collapse detected at Canteen - SOS,High,Safety
+Air conditioner is damaged in Gymkhana,Medium,IT/AV
+Malfunctioning Door lock at Placement Cell,Medium,Safety
+Minor Door handle issue at Parking Lot,Low,Plumbing
+Broken Projector in Placement Cell,Medium,IT/AV
+Need extra Dustbins for Study Area,Low,Safety
+WiFi Router needs repair in Staff Room,Medium,Safety
+Need extra Whiteboard marker for Parking Lot,Low,Plumbing
+The Signage is slightly loose at Corridor,Low,Furniture
+Immediate attention required: Live sparking wires - Hostel Block A,High,Electrical
+Whiteboard marker is flickering in Parking Lot,Low,HVAC
+Malfunctioning Ceiling fan at Placement Cell,Medium,Plumbing
+Structural collapse is causing a hazard in Lab 402,High,Safety
+Emergency: Gas leak at Main Auditorium,High,IT/AV
+Please clean the Chairs in Reception,Low,IT/AV
+Malfunctioning Water tap at Washroom,Medium,HVAC
+Need extra Signage for Reception,Low,Safety
+Gas leak detected at Server Room - SOS,High,Plumbing
+Requesting Whiteboard marker in Parking Lot,Low,Electrical
+Dustbins is flickering in Garden Area,Low,Safety
+Ceiling fan needs repair in Seminar Hall,Medium,Safety
+Signage is flickering in Parking Lot,Low,Furniture
+Malfunctioning Door lock at Washroom,Medium,Furniture
+Critical Broken chemical bottle in the Server Room,High,Plumbing
+Please clean the Chairs in Waiting Lounge,Low,Electrical
+The Water tap is not working properly at Classroom 101,Medium,Safety
+Water tap needs repair in Washroom,Medium,HVAC
+Dangerous Stuck elevator near Main Auditorium,High,Safety
+Immediate attention required: Short circuit - Server Room,High,IT/AV
+Water tap needs repair in Staff Room,Medium,Safety
+Minor Signage issue at Garden Area,Low,Safety
+Water tap is damaged in Library,Medium,HVAC
+Emergency: Short circuit at Hostel Block A,High,IT/AV
+The Projector is not working properly at Washroom,Medium,Plumbing
+Live sparking wires detected at Hostel Block A - SOS,High,IT/AV
+Notice board is flickering in Garden Area,Low,Safety
+Malfunctioning Water tap at Gymkhana,Medium,Furniture
+Critical Stuck elevator in the Hostel Block A,High,Electrical
+The Water tap is not working properly at Staff Room,Medium,Furniture
+Emergency: Live sparking wires at Lab 402,High,Electrical
+Laboratory equipment needs repair in Library,Medium,HVAC
+Water tap is leaking in the Staff Room,Medium,HVAC
+Requesting Door handle in Parking Lot,Low,Furniture
+Projector is leaking in the Washroom,Medium,Plumbing
+Dangerous Fire outbreak near Canteen,High,Plumbing
+Emergency: Stuck elevator at Chemistry Wing,High,Plumbing
+Malfunctioning WiFi Router at Library,Medium,Furniture
+Minor Notice board issue at Garden Area,Low,Electrical
+Water tap needs repair in Placement Cell,Medium,Plumbing
+The Laboratory equipment is not working properly at Library,Medium,Electrical
+Please clean the Door handle in Garden Area,Low,Electrical
+Need extra Notice board for Study Area,Low,Electrical
+Dangerous Exposed high-voltage cable near Server Room,High,Safety
+Please clean the Chairs in Reception,Low,Furniture
+The Door lock is not working properly at Classroom 101,Medium,Safety
+WiFi Router is damaged in Gymkhana,Medium,Plumbing
+Structural collapse is causing a hazard in Canteen,High,IT/AV
+Door handle is flickering in Waiting Lounge,Low,Furniture
+Immediate attention required: Fire outbreak - Server Room,High,IT/AV
+Please clean the Tube light in Reception,Low,Electrical
+Dangerous Live sparking wires near Server Room,High,Safety
+Gas leak detected at Lab 402 - SOS,High,Plumbing
+Need extra Door handle for Garden Area,Low,Safety
+Please clean the Whiteboard marker in Parking Lot,Low,Safety
+Need extra Notice board for Garden Area,Low,Electrical
+Dangerous Exposed high-voltage cable near Exam Hall,High,IT/AV
+Immediate attention required: Severe flooding - Canteen,High,HVAC
+The Air conditioner is not working properly at Staff Room,Medium,Plumbing
+Broken Air conditioner in Placement Cell,Medium,Furniture
+Water cooler is damaged in Placement Cell,Medium,Safety
+Structural collapse is causing a hazard in Server Room,High,IT/AV
+Broken Window pane in Staff Room,Medium,Safety
+Minor Whiteboard marker issue at Reception,Low,Electrical
+Structural collapse is causing a hazard in Hostel Block A,High,HVAC
+Projector is leaking in the Washroom,Medium,HVAC
+Requesting Chairs in Study Area,Low,HVAC
+Broken Ceiling fan in Gymkhana,Medium,Plumbing
+Immediate attention required: Stuck elevator - Lab 402,High,IT/AV
+Laboratory equipment is damaged in Seminar Hall,Medium,Furniture
+Structural collapse detected at Lab 402 - SOS,High,IT/AV
+Critical Fire outbreak in the Chemistry Wing,High,Furniture
+Malfunctioning Air conditioner at Classroom 101,Medium,Electrical
+Critical Fire outbreak in the Server Room,High,Electrical
+Minor Door handle issue at Corridor,Low,IT/AV
+Malfunctioning WiFi Router at Library,Medium,Electrical
+The Dustbins is slightly loose at Parking Lot,Low,Electrical
+Broken Water tap in Gymkhana,Medium,Plumbing
+Emergency: Exposed high-voltage cable at Canteen,High,Plumbing
+Critical Exposed high-voltage cable in the Main Auditorium,High,Electrical
+Water tap is leaking in the Gymkhana,Medium,Electrical
+Critical Exposed high-voltage cable in the Exam Hall,High,Furniture
+Critical Severe flooding in the Server Room,High,HVAC
+The Tube light is slightly loose at Waiting Lounge,Low,HVAC
+Broken Ceiling fan in Seminar Hall,Medium,Electrical
+Broken Window pane in Library,Medium,Plumbing
+Dangerous Fire outbreak near Exam Hall,High,Plumbing
+Need extra Signage for Waiting Lounge,Low,Safety
+Need extra Door handle for Waiting Lounge,Low,HVAC
+Broken Window pane in Library,Medium,IT/AV
+Please clean the Dustbins in Study Area,Low,HVAC
+Emergency: Severe flooding at Canteen,High,Plumbing
+Minor Dustbins issue at Reception,Low,Safety
+Minor Tube light issue at Study Area,Low,Furniture
+Critical Live sparking wires in the Hostel Block A,High,Electrical
+Need extra Signage for Parking Lot,Low,Furniture
+Critical Live sparking wires in the Main Auditorium,High,HVAC
+The WiFi Router is not working properly at Staff Room,Medium,IT/AV
+Broken Door lock in Seminar Hall,Medium,Plumbing
+Broken Water cooler in Classroom 101,Medium,HVAC
+The Signage is slightly loose at Reception,Low,Furniture
+Minor Whiteboard marker issue at Waiting Lounge,Low,Plumbing
+Minor Door handle issue at Waiting Lounge,Low,IT/AV
+Malfunctioning Air conditioner at Gymkhana,Medium,Safety
+Malfunctioning Water tap at Library,Medium,Electrical
+Immediate attention required: Short circuit - Server Room,High,Plumbing
+Air conditioner is leaking in the Classroom 101,Medium,IT/AV
+Immediate attention required: Severe flooding - Chemistry Wing,High,Plumbing
+Ceiling fan is leaking in the Library,Medium,Furniture
+Malfunctioning Door lock at Placement Cell,Medium,Plumbing
+Notice board is flickering in Waiting Lounge,Low,Furniture
+Ceiling fan needs repair in Seminar Hall,Medium,HVAC
+Emergency: Fire outbreak at Main Auditorium,High,Safety
+Water tap is leaking in the Placement Cell,Medium,Plumbing
+Dangerous Exposed high-voltage cable near Chemistry Wing,High,Safety
+The Door lock is not working properly at Library,Medium,Electrical
+Malfunctioning Window pane at Placement Cell,Medium,Plumbing
+Immediate attention required: Exposed high-voltage cable - Chemistry Wing,High,Electrical
+Minor Whiteboard marker issue at Corridor,Low,IT/AV
+Requesting Tube light in Reception,Low,HVAC
+Dangerous Stuck elevator near Main Auditorium,High,Safety
+Requesting Notice board in Parking Lot,Low,IT/AV
+Immediate attention required: Gas leak - Server Room,High,HVAC
+Broken chemical bottle detected at Canteen - SOS,High,HVAC
+Need extra Chairs for Reception,Low,Safety
+Live sparking wires is causing a hazard in Main Auditorium,High,Electrical
+Requesting Curtains in Parking Lot,Low,HVAC
+The Door handle is slightly loose at Reception,Low,IT/AV
+The Laboratory equipment is not working properly at Classroom 101,Medium,IT/AV
+Live sparking wires detected at Canteen - SOS,High,IT/AV
+Immediate attention required: Severe flooding - Main Auditorium,High,Plumbing
+Please clean the Signage in Waiting Lounge,Low,HVAC
+Chairs is flickering in Parking Lot,Low,Safety
+Requesting Notice board in Corridor,Low,Furniture
+Door handle is flickering in Waiting Lounge,Low,Plumbing
+Emergency: Gas leak at Hostel Block A,High,Safety
+Immediate attention required: Fire outbreak - Hostel Block A,High,Safety
+Please clean the Whiteboard marker in Parking Lot,Low,Electrical
+Need extra Notice board for Garden Area,Low,Plumbing
+Malfunctioning WiFi Router at Gymkhana,Medium,Furniture
+Please clean the Whiteboard marker in Study Area,Low,Furniture
+Requesting Whiteboard marker in Parking Lot,Low,Electrical
+Dangerous Gas leak near Lab 402,High,IT/AV
+Emergency: Short circuit at Chemistry Wing,High,Plumbing
+Projector is leaking in the Classroom 101,Medium,Electrical
+Signage is flickering in Study Area,Low,Furniture
+Broken Water cooler in Staff Room,Medium,Plumbing
+Fire outbreak detected at Lab 402 - SOS,High,Safety
+Water tap is leaking in the Library,Medium,Safety
+The Door lock is not working properly at Gymkhana,Medium,Electrical
+The Signage is slightly loose at Waiting Lounge,Low,Electrical
+Minor Notice board issue at Waiting Lounge,Low,IT/AV
+Requesting Dustbins in Reception,Low,Electrical
+WiFi Router needs repair in Placement Cell,Medium,Furniture
+The Whiteboard marker is slightly loose at Study Area,Low,Furniture
+Malfunctioning Window pane at Gymkhana,Medium,HVAC
+Please clean the Notice board in Parking Lot,Low,Electrical
+Window pane is damaged in Gymkhana,Medium,Safety
+Laboratory equipment needs repair in Washroom,Medium,Furniture
+Gas leak is causing a hazard in Canteen,High,Electrical
+Curtains is flickering in Reception,Low,Furniture
+Dangerous Short circuit near Server Room,High,HVAC
+Immediate attention required: Severe flooding - Canteen,High,Electrical
+Projector is leaking in the Staff Room,Medium,Furniture
+Dangerous Severe flooding near Canteen,High,IT/AV
+Exposed high-voltage cable detected at Lab 402 - SOS,High,Plumbing
+Window pane needs repair in Gymkhana,Medium,IT/AV
+Dangerous Live sparking wires near Chemistry Wing,High,Plumbing
+Malfunctioning Window pane at Staff Room,Medium,Plumbing
+Exposed high-voltage cable detected at Server Room - SOS,High,Electrical
+The Whiteboard marker is slightly loose at Study Area,Low,Safety
+Broken Door lock in Staff Room,Medium,Electrical
+Severe flooding is causing a hazard in Canteen,High,Furniture
+Air conditioner is leaking in the Washroom,Medium,HVAC
+Door handle is flickering in Study Area,Low,IT/AV
+Please clean the Signage in Garden Area,Low,HVAC
+Need extra Tube light for Garden Area,Low,Safety
+Malfunctioning WiFi Router at Seminar Hall,Medium,HVAC
+Broken Door lock in Seminar Hall,Medium,Plumbing
+The Ceiling fan is not working properly at Classroom 101,Medium,Electrical
+The Projector is not working properly at Gymkhana,Medium,HVAC
+Need extra Chairs for Study Area,Low,Safety
+Ceiling fan is leaking in the Seminar Hall,Medium,IT/AV
+Malfunctioning Water tap at Staff Room,Medium,Safety
+The Ceiling fan is not working properly at Staff Room,Medium,Furniture
+The Dustbins is slightly loose at Waiting Lounge,Low,IT/AV
+The Notice board is slightly loose at Waiting Lounge,Low,Electrical
+Door lock needs repair in Washroom,Medium,IT/AV
+Dangerous Structural collapse near Chemistry Wing,High,Safety
+Broken Window pane in Library,Medium,IT/AV
+Live sparking wires detected at Main Auditorium - SOS,High,Plumbing
+Fire outbreak is causing a hazard in Lab 402,High,HVAC
+Air conditioner is leaking in the Gymkhana,Medium,Electrical
+Door lock needs repair in Classroom 101,Medium,Plumbing
+Fire outbreak is causing a hazard in Chemistry Wing,High,Safety
+Immediate attention required: Stuck elevator - Hostel Block A,High,Furniture
+Chairs is flickering in Reception,Low,Plumbing
+Stuck elevator is causing a hazard in Hostel Block A,High,Plumbing
+Emergency: Short circuit at Chemistry Wing,High,Electrical
+Critical Broken chemical bottle in the Server Room,High,Plumbing
+Stuck elevator detected at Main Auditorium - SOS,High,IT/AV
+Malfunctioning Water cooler at Placement Cell,Medium,Safety
+Emergency: Broken chemical bottle at Chemistry Wing,High,HVAC
+Water tap is leaking in the Classroom 101,Medium,IT/AV
+Minor Notice board issue at Garden Area,Low,Safety
+Critical Severe flooding in the Canteen,High,Plumbing
+Minor Curtains issue at Study Area,Low,Electrical
+Critical Broken chemical bottle in the Main Auditorium,High,HVAC
+Minor Whiteboard marker issue at Parking Lot,Low,Safety
+Live sparking wires is causing a hazard in Canteen,High,Plumbing
+WiFi Router is damaged in Staff Room,Medium,HVAC
+Immediate attention required: Short circuit - Main Auditorium,High,HVAC
+Emergency: Stuck elevator at Main Auditorium,High,Furniture
+Severe flooding detected at Chemistry Wing - SOS,High,Plumbing
+Broken WiFi Router in Placement Cell,Medium,IT/AV
+Need extra Tube light for Study Area,Low,HVAC
+Broken Laboratory equipment in Seminar Hall,Medium,HVAC
+Malfunctioning Water cooler at Placement Cell,Medium,HVAC
+The Whiteboard marker is slightly loose at Waiting Lounge,Low,Plumbing
+Minor Notice board issue at Garden Area,Low,Electrical
+Broken Ceiling fan in Gymkhana,Medium,Furniture
+Emergency: Severe flooding at Exam Hall,High,HVAC
+Critical Gas leak in the Main Auditorium,High,Plumbing
+Dangerous Severe flooding near Hostel Block A,High,HVAC
+Broken Air conditioner in Classroom 101,Medium,Furniture
+Laboratory equipment is damaged in Classroom 101,Medium,Furniture
+Emergency: Fire outbreak at Exam Hall,High,Safety
+Dustbins is flickering in Garden Area,Low,Electrical
+Broken Water tap in Seminar Hall,Medium,IT/AV
+Tube light is flickering in Parking Lot,Low,IT/AV
+Critical Fire outbreak in the Main Auditorium,High,Plumbing
+Critical Live sparking wires in the Hostel Block A,High,Electrical
+Critical Broken chemical bottle in the Hostel Block A,High,HVAC
+Immediate attention required: Structural collapse - Canteen,High,Plumbing
+The Whiteboard marker is slightly loose at Corridor,Low,IT/AV
+Dangerous Structural collapse near Exam Hall,High,Safety
+The Notice board is slightly loose at Study Area,Low,Safety
+The Water tap is not working properly at Library,Medium,Electrical
+Ceiling fan is damaged in Placement Cell,Medium,Safety
+Door handle is flickering in Garden Area,Low,Safety
+Minor Dustbins issue at Parking Lot,Low,Plumbing
+Dangerous Stuck elevator near Hostel Block A,High,Safety
+The Curtains is slightly loose at Reception,Low,Electrical
+Immediate attention required: Severe flooding - Lab 402,High,Plumbing
+Dangerous Fire outbreak near Hostel Block A,High,Plumbing
+Need extra Signage for Corridor,Low,Furniture
+Air conditioner needs repair in Seminar Hall,Medium,Furniture
+Minor Chairs issue at Study Area,Low,Furniture
+Stuck elevator is causing a hazard in Lab 402,High,IT/AV
+Critical Broken chemical bottle in the Chemistry Wing,High,HVAC
+Malfunctioning Water tap at Placement Cell,Medium,Plumbing
+The Projector is not working properly at Staff Room,Medium,Furniture
+The Laboratory equipment is not working properly at Placement Cell,Medium,IT/AV
+Requesting Signage in Parking Lot,Low,IT/AV
+The Signage is slightly loose at Study Area,Low,Electrical
+The Ceiling fan is not working properly at Seminar Hall,Medium,IT/AV
+Ceiling fan is damaged in Staff Room,Medium,Furniture
+Dangerous Broken chemical bottle near Lab 402,High,HVAC
+Air conditioner needs repair in Seminar Hall,Medium,Safety
+Laboratory equipment is damaged in Placement Cell,Medium,Plumbing
+Malfunctioning Water cooler at Gymkhana,Medium,HVAC
+Need extra Chairs for Waiting Lounge,Low,HVAC
+Malfunctioning Water cooler at Staff Room,Medium,Plumbing
+The Tube light is slightly loose at Study Area,Low,Safety
+Please clean the Door handle in Reception,Low,Plumbing
+Stuck elevator detected at Main Auditorium - SOS,High,IT/AV
+The WiFi Router is not working properly at Seminar Hall,Medium,Electrical
+Immediate attention required: Short circuit - Hostel Block A,High,Furniture
+Malfunctioning Air conditioner at Gymkhana,Medium,IT/AV
+Dangerous Structural collapse near Chemistry Wing,High,Plumbing
+Laboratory equipment is leaking in the Placement Cell,Medium,Safety
+Minor Whiteboard marker issue at Garden Area,Low,IT/AV
+Requesting Signage in Reception,Low,Electrical
+Door handle is flickering in Study Area,Low,Safety
+Critical Gas leak in the Chemistry Wing,High,IT/AV
+Need extra Tube light for Corridor,Low,Electrical
+Broken chemical bottle detected at Server Room - SOS,High,Furniture
+Air conditioner is damaged in Staff Room,Medium,Furniture
+Structural collapse is causing a hazard in Main Auditorium,High,Electrical
+Malfunctioning Water cooler at Seminar Hall,Medium,HVAC
+Need extra Dustbins for Parking Lot,Low,IT/AV
+Water cooler is damaged in Gymkhana,Medium,HVAC
+Curtains is flickering in Garden Area,Low,Electrical
+Emergency: Broken chemical bottle at Chemistry Wing,High,Safety
+Need extra Chairs for Garden Area,Low,IT/AV
+Structural collapse is causing a hazard in Hostel Block A,High,Plumbing
+Structural collapse detected at Lab 402 - SOS,High,HVAC
+Whiteboard marker is flickering in Garden Area,Low,Electrical
+Water tap is damaged in Placement Cell,Medium,IT/AV
+Dangerous Live sparking wires near Lab 402,High,Safety
+Structural collapse is causing a hazard in Exam Hall,High,Furniture
+Need extra Signage for Study Area,Low,Electrical
+Emergency: Broken chemical bottle at Main Auditorium,High,Safety
+Stuck elevator is causing a hazard in Server Room,High,Furniture
+Broken Door lock in Seminar Hall,Medium,Electrical
+WiFi Router is damaged in Gymkhana,Medium,Plumbing
+Need extra Curtains for Study Area,Low,IT/AV
+The Projector is not working properly at Placement Cell,Medium,HVAC
+Fire outbreak detected at Lab 402 - SOS,High,Electrical
+Emergency: Stuck elevator at Lab 402,High,Electrical
+Critical Live sparking wires in the Server Room,High,Plumbing
+Tube light is flickering in Garden Area,Low,IT/AV
+Malfunctioning Door lock at Seminar Hall,Medium,Plumbing
+Fire outbreak is causing a hazard in Main Auditorium,High,Furniture
+Immediate attention required: Exposed high-voltage cable - Hostel Block A,High,Plumbing
+Requesting Curtains in Study Area,Low,IT/AV
+Minor Curtains issue at Reception,Low,Furniture
+Requesting Chairs in Parking Lot,Low,Safety
+Please clean the Door handle in Corridor,Low,Plumbing
+The Chairs is slightly loose at Parking Lot,Low,Electrical
+Stuck elevator is causing a hazard in Chemistry Wing,High,Safety
+Short circuit is causing a hazard in Canteen,High,Electrical
+Need extra Signage for Parking Lot,Low,Furniture
+Malfunctioning Air conditioner at Classroom 101,Medium,Electrical
+Immediate attention required: Short circuit - Exam Hall,High,HVAC
+The Tube light is slightly loose at Reception,Low,IT/AV
+Projector is leaking in the Library,Medium,Plumbing
+Structural collapse detected at Main Auditorium - SOS,High,Safety
+Projector is leaking in the Staff Room,Medium,Furniture
+Requesting Signage in Corridor,Low,Furniture
+Minor Dustbins issue at Study Area,Low,Electrical
+Critical Stuck elevator in the Exam Hall,High,HVAC
+Emergency: Short circuit at Server Room,High,Furniture
+The Projector is not working properly at Seminar Hall,Medium,Furniture
+Emergency: Severe flooding at Main Auditorium,High,HVAC
+Immediate attention required: Fire outbreak - Server Room,High,Safety
+The Dustbins is slightly loose at Reception,Low,Furniture
+Immediate attention required: Exposed high-voltage cable - Chemistry Wing,High,Furniture
+Requesting Notice board in Corridor,Low,HVAC
+Requesting Whiteboard marker in Reception,Low,HVAC
+Emergency: Live sparking wires at Chemistry Wing,High,Safety
+Minor Signage issue at Parking Lot,Low,Safety
+Live sparking wires is causing a hazard in Server Room,High,Safety
+Please clean the Notice board in Study Area,Low,Safety
+Air conditioner needs repair in Placement Cell,Medium,Furniture
+Door lock is damaged in Staff Room,Medium,Plumbing
+Ceiling fan is damaged in Library,Medium,IT/AV
+Exposed high-voltage cable detected at Server Room - SOS,High,Plumbing
+Water cooler is damaged in Staff Room,Medium,Furniture
+Requesting Curtains in Garden Area,Low,HVAC
+Broken chemical bottle is causing a hazard in Chemistry Wing,High,Furniture
+Dangerous Structural collapse near Chemistry Wing,High,HVAC
+Stuck elevator detected at Server Room - SOS,High,IT/AV
+Exposed high-voltage cable is causing a hazard in Exam Hall,High,IT/AV
+Dangerous Fire outbreak near Main Auditorium,High,Plumbing
+Malfunctioning Ceiling fan at Library,Medium,IT/AV
+The WiFi Router is not working properly at Seminar Hall,Medium,Plumbing
+The Air conditioner is not working properly at Placement Cell,Medium,Plumbing
+Dangerous Fire outbreak near Lab 402,High,IT/AV
+Dangerous Fire outbreak near Main Auditorium,High,IT/AV
+Need extra Chairs for Parking Lot,Low,IT/AV
+Immediate attention required: Gas leak - Canteen,High,Electrical
+Water tap is leaking in the Seminar Hall,Medium,Electrical
+Minor Whiteboard marker issue at Reception,Low,IT/AV
+Live sparking wires is causing a hazard in Server Room,High,HVAC
+Dangerous Severe flooding near Exam Hall,High,Furniture
+Broken Ceiling fan in Classroom 101,Medium,Electrical
+Water tap is leaking in the Washroom,Medium,Safety
+Malfunctioning WiFi Router at Library,Medium,Plumbing
+Emergency: Broken chemical bottle at Chemistry Wing,High,Furniture
+Water cooler needs repair in Placement Cell,Medium,Safety
+The Projector is not working properly at Library,Medium,Electrical
+Laboratory equipment is damaged in Staff Room,Medium,Safety
+Emergency: Exposed high-voltage cable at Exam Hall,High,IT/AV
+WiFi Router is leaking in the Staff Room,Medium,HVAC
+Please clean the Dustbins in Corridor,Low,Safety
+Laboratory equipment is leaking in the Gymkhana,Medium,Safety
+Water tap needs repair in Staff Room,Medium,Safety
+Minor Door handle issue at Reception,Low,IT/AV
+Gas leak is causing a hazard in Chemistry Wing,High,Furniture
+Broken chemical bottle is causing a hazard in Server Room,High,Electrical
+Immediate attention required: Broken chemical bottle - Exam Hall,High,Safety
+The Chairs is slightly loose at Corridor,Low,HVAC
+Live sparking wires detected at Canteen - SOS,High,HVAC
+Critical Severe flooding in the Server Room,High,Plumbing
+Broken Water cooler in Seminar Hall,Medium,Plumbing
+The Door handle is slightly loose at Parking Lot,Low,IT/AV
+Dangerous Live sparking wires near Canteen,High,Furniture
+Need extra Chairs for Garden Area,Low,Electrical
+Please clean the Door handle in Waiting Lounge,Low,Plumbing
+Requesting Notice board in Study Area,Low,IT/AV
+Broken chemical bottle detected at Chemistry Wing - SOS,High,Safety
+Stuck elevator detected at Canteen - SOS,High,HVAC
+Exposed high-voltage cable is causing a hazard in Chemistry Wing,High,Electrical
+Emergency: Broken chemical bottle at Chemistry Wing,High,Plumbing
+Minor Dustbins issue at Reception,Low,Safety
+Emergency: Gas leak at Hostel Block A,High,Electrical
+Critical Stuck elevator in the Canteen,High,Plumbing
+Emergency: Broken chemical bottle at Canteen,High,Plumbing
+Whiteboard marker is flickering in Study Area,Low,Furniture
+The Air conditioner is not working properly at Gymkhana,Medium,HVAC
+Minor Curtains issue at Corridor,Low,Electrical
+Please clean the Curtains in Corridor,Low,Safety
+Signage is flickering in Waiting Lounge,Low,Furniture
+Exposed high-voltage cable is causing a hazard in Main Auditorium,High,Plumbing
+Requesting Signage in Study Area,Low,Safety
+Dustbins is flickering in Parking Lot,Low,Safety
+Emergency: Gas leak at Main Auditorium,High,IT/AV
+Water tap needs repair in Staff Room,Medium,Safety
+The Laboratory equipment is not working properly at Gymkhana,Medium,Safety
+Critical Structural collapse in the Main Auditorium,High,Furniture
+Critical Short circuit in the Hostel Block A,High,Electrical
+Broken chemical bottle detected at Chemistry Wing - SOS,High,IT/AV
+Critical Exposed high-voltage cable in the Canteen,High,HVAC
+WiFi Router is leaking in the Placement Cell,Medium,Furniture
+Door lock is leaking in the Seminar Hall,Medium,IT/AV
+Need extra Curtains for Waiting Lounge,Low,IT/AV
+Immediate attention required: Broken chemical bottle - Hostel Block A,High,Furniture
+Broken Ceiling fan in Washroom,Medium,HVAC
+Need extra Tube light for Parking Lot,Low,Furniture
+Requesting Signage in Garden Area,Low,Furniture
+Please clean the Tube light in Study Area,Low,Electrical
+Immediate attention required: Short circuit - Server Room,High,HVAC
+Structural collapse detected at Exam Hall - SOS,High,IT/AV
+Short circuit is causing a hazard in Hostel Block A,High,Safety
+Water tap needs repair in Gymkhana,Medium,Safety
+Immediate attention required: Live sparking wires - Lab 402,High,IT/AV
+Minor Tube light issue at Parking Lot,Low,HVAC
+Stuck elevator is causing a hazard in Lab 402,High,Furniture
+Immediate attention required: Structural collapse - Canteen,High,Electrical
+Chairs is flickering in Garden Area,Low,IT/AV
+Water cooler needs repair in Library,Medium,HVAC
+Dangerous Gas leak near Main Auditorium,High,Electrical
+The Door handle is slightly loose at Waiting Lounge,Low,Safety
+Water cooler is damaged in Staff Room,Medium,IT/AV
+WiFi Router is damaged in Staff Room,Medium,Electrical
+Minor Tube light issue at Parking Lot,Low,Electrical
+Gas leak detected at Exam Hall - SOS,High,Safety
+Need extra Signage for Garden Area,Low,Electrical
+Emergency: Live sparking wires at Canteen,High,HVAC
+Dangerous Fire outbreak near Lab 402,High,Safety
+Requesting Tube light in Corridor,Low,HVAC
+Minor Door handle issue at Garden Area,Low,HVAC
+Please clean the Curtains in Corridor,Low,HVAC
+Minor Chairs issue at Garden Area,Low,Furniture
+Air conditioner is leaking in the Library,Medium,HVAC
+Projector is damaged in Gymkhana,Medium,Safety
+Whiteboard marker is flickering in Garden Area,Low,Furniture
+Please clean the Whiteboard marker in Corridor,Low,Electrical
+Window pane is damaged in Staff Room,Medium,Safety
+Critical Broken chemical bottle in the Exam Hall,High,Electrical
+Laboratory equipment needs repair in Classroom 101,Medium,IT/AV
+Requesting Tube light in Garden Area,Low,Electrical
+Gas leak detected at Lab 402 - SOS,High,Plumbing
+Laboratory equipment is damaged in Seminar Hall,Medium,Safety
+Notice board is flickering in Study Area,Low,HVAC
+Malfunctioning Water tap at Gymkhana,Medium,Electrical
+Stuck elevator detected at Hostel Block A - SOS,High,Plumbing
+Projector is damaged in Washroom,Medium,Electrical
+Exposed high-voltage cable detected at Lab 402 - SOS,High,Plumbing
+Dangerous Structural collapse near Main Auditorium,High,HVAC
+Emergency: Severe flooding at Main Auditorium,High,HVAC
+Need extra Signage for Waiting Lounge,Low,Safety
+Curtains is flickering in Parking Lot,Low,Electrical
+Please clean the Whiteboard marker in Parking Lot,Low,Safety
+WiFi Router is damaged in Library,Medium,Furniture
+The Door lock is not working properly at Placement Cell,Medium,HVAC
+Need extra Door handle for Garden Area,Low,Safety
+Dustbins is flickering in Corridor,Low,HVAC
+Door lock needs repair in Placement Cell,Medium,HVAC
+Minor Tube light issue at Corridor,Low,Electrical
+Fire outbreak detected at Lab 402 - SOS,High,IT/AV
+Water cooler needs repair in Library,Medium,HVAC
+The Water tap is not working properly at Gymkhana,Medium,Electrical
+Broken Water tap in Placement Cell,Medium,Plumbing
+Water cooler needs repair in Washroom,Medium,Electrical
+The Air conditioner is not working properly at Staff Room,Medium,Electrical
+Immediate attention required: Short circuit - Hostel Block A,High,Plumbing
+Emergency: Severe flooding at Exam Hall,High,IT/AV
+Malfunctioning WiFi Router at Placement Cell,Medium,Electrical
+Critical Severe flooding in the Hostel Block A,High,Safety
+Malfunctioning Ceiling fan at Washroom,Medium,Electrical
+Immediate attention required: Stuck elevator - Lab 402,High,Safety
+Critical Broken chemical bottle in the Canteen,High,Furniture
+Gas leak detected at Lab 402 - SOS,High,IT/AV
+Broken Projector in Placement Cell,Medium,Furniture
+Live sparking wires detected at Canteen - SOS,High,Plumbing
+Broken Water tap in Library,Medium,IT/AV
+Laboratory equipment needs repair in Library,Medium,Furniture
+Malfunctioning Water tap at Seminar Hall,Medium,Electrical
+Malfunctioning Water tap at Placement Cell,Medium,Plumbing
+Malfunctioning Door lock at Classroom 101,Medium,HVAC
+Emergency: Gas leak at Exam Hall,High,Safety
+Minor Curtains issue at Waiting Lounge,Low,HVAC
+The WiFi Router is not working properly at Placement Cell,Medium,Plumbing
+Need extra Chairs for Corridor,Low,IT/AV
+The Air conditioner is not working properly at Classroom 101,Medium,Furniture
+Critical Exposed high-voltage cable in the Canteen,High,Plumbing
+The Whiteboard marker is slightly loose at Waiting Lounge,Low,IT/AV
+Broken Air conditioner in Washroom,Medium,Electrical
+Water cooler needs repair in Gymkhana,Medium,HVAC
+The Window pane is not working properly at Library,Medium,IT/AV
+Minor Tube light issue at Study Area,Low,HVAC
+Immediate attention required: Live sparking wires - Server Room,High,IT/AV
+Dangerous Severe flooding near Canteen,High,HVAC
+Tube light is flickering in Reception,Low,Plumbing
+Ceiling fan is damaged in Staff Room,Medium,HVAC
+Water cooler is leaking in the Washroom,Medium,IT/AV
+Broken Water tap in Classroom 101,Medium,Furniture
+Short circuit detected at Chemistry Wing - SOS,High,Furniture
+Dangerous Stuck elevator near Main Auditorium,High,Electrical
+Water tap is leaking in the Seminar Hall,Medium,Plumbing
+Immediate attention required: Severe flooding - Chemistry Wing,High,IT/AV
+Broken WiFi Router in Staff Room,Medium,Furniture
+Minor Dustbins issue at Parking Lot,Low,Electrical
+Dangerous Severe flooding near Server Room,High,Electrical
+Broken Projector in Washroom,Medium,IT/AV
+Minor Tube light issue at Garden Area,Low,Electrical
+Structural collapse detected at Lab 402 - SOS,High,HVAC
+Requesting Whiteboard marker in Reception,Low,Safety
+Window pane needs repair in Staff Room,Medium,IT/AV
+Minor Chairs issue at Study Area,Low,IT/AV
+Please clean the Chairs in Garden Area,Low,Safety
+Malfunctioning Projector at Library,Medium,IT/AV
+Please clean the Signage in Parking Lot,Low,Electrical
+Dangerous Fire outbreak near Exam Hall,High,IT/AV
+Minor Curtains issue at Parking Lot,Low,IT/AV
+The Water cooler is not working properly at Washroom,Medium,Safety
+Minor Tube light issue at Reception,Low,Furniture
+Need extra Tube light for Waiting Lounge,Low,Furniture
+Whiteboard marker is flickering in Study Area,Low,Plumbing
+Requesting Signage in Reception,Low,Plumbing
+Critical Severe flooding in the Chemistry Wing,High,IT/AV
+The Chairs is slightly loose at Corridor,Low,Furniture
+Please clean the Whiteboard marker in Waiting Lounge,Low,Plumbing
+Broken Window pane in Placement Cell,Medium,Safety
+Air conditioner is damaged in Placement Cell,Medium,Electrical
+Please clean the Dustbins in Parking Lot,Low,Plumbing
+Need extra Tube light for Corridor,Low,Plumbing
+Immediate attention required: Stuck elevator - Chemistry Wing,High,Plumbing
+Severe flooding is causing a hazard in Exam Hall,High,IT/AV
+Minor Dustbins issue at Waiting Lounge,Low,HVAC
+Requesting Door handle in Waiting Lounge,Low,Plumbing
+Ceiling fan needs repair in Washroom,Medium,Furniture
+The Tube light is slightly loose at Corridor,Low,Safety
+Broken WiFi Router in Washroom,Medium,Safety
+Please clean the Notice board in Parking Lot,Low,Safety
+Notice board is flickering in Corridor,Low,IT/AV
+Dangerous Gas leak near Lab 402,High,Safety
+Laboratory equipment is damaged in Classroom 101,Medium,Safety
+The Door handle is slightly loose at Reception,Low,Electrical
+Projector needs repair in Library,Medium,Furniture
+Malfunctioning Door lock at Placement Cell,Medium,Safety
+Water tap is damaged in Library,Medium,Electrical
+Projector is leaking in the Placement Cell,Medium,IT/AV
+Please clean the Dustbins in Study Area,Low,HVAC
+Door lock is leaking in the Seminar Hall,Medium,HVAC
+Critical Short circuit in the Canteen,High,Plumbing
+Critical Exposed high-voltage cable in the Canteen,High,Electrical
+Critical Live sparking wires in the Hostel Block A,High,IT/AV
+Water cooler needs repair in Library,Medium,Electrical
+Dangerous Gas leak near Hostel Block A,High,Furniture
+The WiFi Router is not working properly at Seminar Hall,Medium,Safety
+Door handle is flickering in Parking Lot,Low,Plumbing
+Please clean the Notice board in Reception,Low,Plumbing
+Immediate attention required: Broken chemical bottle - Canteen,High,IT/AV
+Water tap needs repair in Seminar Hall,Medium,Electrical
+Door lock is leaking in the Washroom,Medium,Furniture
+Ceiling fan is damaged in Classroom 101,Medium,Electrical
+Need extra Chairs for Parking Lot,Low,Electrical
+WiFi Router is leaking in the Washroom,Medium,Safety
+Structural collapse is causing a hazard in Hostel Block A,High,Furniture
+The Laboratory equipment is not working properly at Gymkhana,Medium,HVAC
+Broken Projector in Staff Room,Medium,HVAC
+Minor Curtains issue at Parking Lot,Low,HVAC
+Critical Exposed high-voltage cable in the Main Auditorium,High,Furniture
+Emergency: Exposed high-voltage cable at Hostel Block A,High,Electrical
+Critical Stuck elevator in the Lab 402,High,Safety
+The Water cooler is not working properly at Placement Cell,Medium,Electrical
+Ceiling fan needs repair in Seminar Hall,Medium,Safety
+Dangerous Live sparking wires near Chemistry Wing,High,Electrical
+Live sparking wires is causing a hazard in Server Room,High,Plumbing
+Water tap needs repair in Seminar Hall,Medium,Furniture
+Critical Exposed high-voltage cable in the Lab 402,High,HVAC
+Broken Ceiling fan in Washroom,Medium,Safety
+Requesting Tube light in Corridor,Low,HVAC
+Air conditioner is leaking in the Washroom,Medium,IT/AV
+Need extra Signage for Study Area,Low,Furniture
+Door lock needs repair in Placement Cell,Medium,Safety
+Broken chemical bottle is causing a hazard in Exam Hall,High,Plumbing
+Water tap is damaged in Library,Medium,HVAC
+Malfunctioning Laboratory equipment at Seminar Hall,Medium,HVAC
+The Signage is slightly loose at Waiting Lounge,Low,Furniture
+Gas leak detected at Canteen - SOS,High,Safety
+Broken Door lock in Seminar Hall,Medium,IT/AV
+Minor Door handle issue at Parking Lot,Low,Furniture
+Dangerous Stuck elevator near Main Auditorium,High,HVAC
+Need extra Whiteboard marker for Study Area,Low,HVAC
+WiFi Router needs repair in Washroom,Medium,Furniture
+Water cooler is damaged in Classroom 101,Medium,Furniture
+The Water tap is not working properly at Placement Cell,Medium,Furniture
+Window pane is damaged in Washroom,Medium,Electrical
+Air conditioner needs repair in Gymkhana,Medium,IT/AV
+Door lock is damaged in Classroom 101,Medium,Furniture
+Immediate attention required: Fire outbreak - Canteen,High,Safety
+Critical Broken chemical bottle in the Exam Hall,High,Plumbing
+Stuck elevator detected at Exam Hall - SOS,High,HVAC
+Broken Window pane in Classroom 101,Medium,HVAC
+Please clean the Chairs in Corridor,Low,IT/AV
+Broken Air conditioner in Placement Cell,Medium,Plumbing
+Dangerous Gas leak near Hostel Block A,High,Plumbing
+Emergency: Short circuit at Hostel Block A,High,Furniture
+Please clean the Tube light in Waiting Lounge,Low,Furniture
+Door lock needs repair in Seminar Hall,Medium,Electrical
+Projector needs repair in Library,Medium,HVAC
+WiFi Router is damaged in Placement Cell,Medium,Safety
+Dangerous Structural collapse near Lab 402,High,HVAC
+Short circuit detected at Chemistry Wing - SOS,High,HVAC
+Critical Stuck elevator in the Server Room,High,Electrical
+Malfunctioning Projector at Seminar Hall,Medium,HVAC
+Short circuit is causing a hazard in Canteen,High,IT/AV
+Critical Exposed high-voltage cable in the Hostel Block A,High,Furniture
+Structural collapse detected at Server Room - SOS,High,Safety
+Please clean the Signage in Parking Lot,Low,Safety
+The Ceiling fan is not working properly at Gymkhana,Medium,Furniture
+Dustbins is flickering in Corridor,Low,Safety
+Malfunctioning WiFi Router at Library,Medium,Electrical
+Water tap needs repair in Staff Room,Medium,HVAC
+Critical Exposed high-voltage cable in the Main Auditorium,High,HVAC
+Curtains is flickering in Corridor,Low,Safety
+Immediate attention required: Severe flooding - Main Auditorium,High,Plumbing
+Malfunctioning Water tap at Washroom,Medium,Electrical
+Need extra Tube light for Garden Area,Low,Plumbing
+Notice board is flickering in Waiting Lounge,Low,Plumbing
+Emergency: Gas leak at Main Auditorium,High,Electrical
+Severe flooding detected at Main Auditorium - SOS,High,Furniture
+Water tap is damaged in Placement Cell,Medium,HVAC
+The Tube light is slightly loose at Garden Area,Low,IT/AV
+Critical Live sparking wires in the Exam Hall,High,HVAC
+Emergency: Live sparking wires at Canteen,High,IT/AV
+Notice board is flickering in Parking Lot,Low,Safety
+Emergency: Severe flooding at Lab 402,High,Electrical
+Need extra Whiteboard marker for Parking Lot,Low,Electrical
+Door lock needs repair in Placement Cell,Medium,Plumbing
+Need extra Whiteboard marker for Study Area,Low,HVAC
+Critical Severe flooding in the Hostel Block A,High,Plumbing
+Curtains is flickering in Study Area,Low,Electrical
+Critical Gas leak in the Exam Hall,High,IT/AV
+Critical Severe flooding in the Server Room,High,HVAC
+Broken Window pane in Washroom,Medium,Safety
+Please clean the Whiteboard marker in Parking Lot,Low,Plumbing
+Gas leak detected at Server Room - SOS,High,Electrical
+Emergency: Gas leak at Lab 402,High,HVAC
+Broken Water tap in Washroom,Medium,Plumbing
+The Whiteboard marker is slightly loose at Parking Lot,Low,Plumbing
+Air conditioner is damaged in Washroom,Medium,IT/AV
+Broken Window pane in Library,Medium,Furniture
+Requesting Signage in Parking Lot,Low,Safety
+Minor Curtains issue at Parking Lot,Low,HVAC
+Please clean the Dustbins in Waiting Lounge,Low,Safety
+Live sparking wires is causing a hazard in Chemistry Wing,High,Safety
+Emergency: Structural collapse at Chemistry Wing,High,Furniture
+The Water tap is not working properly at Gymkhana,Medium,Furniture
+Laboratory equipment is leaking in the Staff Room,Medium,Plumbing
+Need extra Dustbins for Waiting Lounge,Low,Plumbing
+Severe flooding is causing a hazard in Server Room,High,Plumbing
+Critical Fire outbreak in the Server Room,High,Electrical
+Gas leak detected at Exam Hall - SOS,High,Electrical
+Requesting Notice board in Corridor,Low,Electrical
+Door lock is damaged in Placement Cell,Medium,IT/AV

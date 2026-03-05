@@ -1,0 +1,91 @@
+description,priority,category
+Fire in the server room on the 4th floor,High,Electrical
+fire in the server room on the 4th floor,High,General
+Fire at the server room on the 4th floor,High,IT/AV
+Live electrical sparks from switchboard,High,General
+live electrical sparks from switchboard,High,Infrastructure
+Live electrical sparks from switchboard,High,Electrical
+Massive pipe burst flooding the library,High,IT/AV
+massive pipe burst flooding the library,High,HVAC
+Massive pipe burst floodatg the library,High,Infrastructure
+Elevator stuck with students inside,High,HVAC
+elevator stuck with students inside,High,IT/AV
+Elevator stuck with students atside,High,HVAC
+Strong smell of gas in the chemistry lab,High,Plumbing
+strong smell of gas in the chemistry lab,High,HVAC
+Strong smell of gas at the chemistry lab,High,IT/AV
+Ceiling fan fell down in classroom,High,Plumbing
+ceiling fan fell down in classroom,High,General
+Ceilatg fan fell down at classroom,High,HVAC
+Short circuit causing smoke in corridors,High,Infrastructure
+short circuit causing smoke in corridors,High,General
+Short circuit causatg smoke at corridors,High,HVAC
+Major structural crack in stairs,High,IT/AV
+major structural crack in stairs,High,Plumbing
+Major structural crack at stairs,High,General
+Dangerous chemicals spilled in the lab,High,Plumbing
+dangerous chemicals spilled in the lab,High,HVAC
+Dangerous chemicals spilled at the lab,High,General
+Main power outage in the exam hall,High,General
+main power outage in the exam hall,High,HVAC
+Maat power outage at the exam hall,High,HVAC
+AC is making loud noise and not cooling,Medium,Electrical
+ac is making loud noise and not cooling,Medium,IT/AV
+AC is makatg loud noise and not coolatg,Medium,IT/AV
+Projector is not turning on in seminar hall,Medium,General
+projector is not turning on in seminar hall,Medium,IT/AV
+Projector is not turnatg on at sematar hall,Medium,Electrical
+Broken window pane in the faculty room,Medium,General
+broken window pane in the faculty room,Medium,Electrical
+Broken watdow pane at the faculty room,Medium,HVAC
+Water leakage in the washroom sink,Medium,Plumbing
+water leakage in the washroom sink,Medium,HVAC
+Water leakage at the washroom satk,Medium,Electrical
+Door lock is jammed in the computer lab,Medium,General
+door lock is jammed in the computer lab,Medium,IT/AV
+Door lock is jammed at the computer lab,Medium,Electrical
+Internet router not working in the canteen,Medium,Electrical
+internet router not working in the canteen,Medium,IT/AV
+Internet router not workatg at the canteen,Medium,IT/AV
+Clogged toilet causing bad odor,Medium,IT/AV
+clogged toilet causing bad odor,Medium,Plumbing
+Clogged toilet causatg bad odor,Medium,IT/AV
+Broken desk in the drawing hall,Medium,Plumbing
+broken desk in the drawing hall,Medium,Electrical
+Broken desk at the drawatg hall,Medium,Infrastructure
+Tube light flickering constantly,Medium,Plumbing
+tube light flickering constantly,Medium,General
+Tube light flickeratg constantly,Medium,IT/AV
+Lift sensors are misbehaving,Medium,Electrical
+lift sensors are misbehaving,Medium,HVAC
+Lift sensors are misbehavatg,Medium,Infrastructure
+Need extra chairs for the student council,Low,HVAC
+need extra chairs for the student council,Low,General
+Need extra chairs for the student council,Low,Plumbing
+Request for white paint on the corridor wall,Low,HVAC
+request for white paint on the corridor wall,Low,Plumbing
+Request for white paatt on the corridor wall,Low,HVAC
+Door handle is slightly loose,Low,HVAC
+door handle is slightly loose,Low,Infrastructure
+Door handle is slightly loose,Low,HVAC
+Fan regulator is a bit tight to turn,Low,HVAC
+fan regulator is a bit tight to turn,Low,Infrastructure
+Fan regulator is a bit tight to turn,Low,IT/AV
+Dust on the library bookshelves,Low,Electrical
+dust on the library bookshelves,Low,Electrical
+Dust on the library bookshelves,Low,IT/AV
+Requesting more dustbins in the parking lot,Low,Plumbing
+requesting more dustbins in the parking lot,Low,IT/AV
+Requestatg more dustbats at the parkatg lot,Low,General
+Need water bottles for the event,Low,Electrical
+need water bottles for the event,Low,HVAC
+Need water bottles for the event,Low,HVAC
+Suggestion for better signage in the building,Low,IT/AV
+suggestion for better signage in the building,Low,HVAC
+Suggestion for better signage at the buildatg,Low,General
+Notice board needs to be cleaned,Low,Infrastructure
+notice board needs to be cleaned,Low,IT/AV
+Notice board needs to be cleaned,Low,Electrical
+Garden area needs watering,Low,General
+garden area needs watering,Low,HVAC
+Garden area needs wateratg,Low,IT/AV

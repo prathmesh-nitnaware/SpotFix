@@ -1,67 +1,44 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Sidebar from './components/Sidebar';
 
-// Importing your Architect-level pages
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import ReportIssue from './pages/ReportIssue';
 import AdminFeed from './pages/AdminFeed';
-import LostFound from './pages/LostFound';
 import Leaderboard from './pages/Leaderboard';
-import IssueMap from './pages/IssueMap';
+import SuperAdminDashboard from './pages/SuperAdminDashboard'; // New
+import UserManagement from './pages/UserManagement'; // New
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+        <div className="flex">
+          {/* Sidebar logic is handled inside the component based on auth state */}
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
 
-          {/* Student Routes */}
-          <Route path="/dashboard" element={
-            <ProtectedRoute allowedRoles={['Student']}>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/report" element={
-            <ProtectedRoute allowedRoles={['Student']}>
-              <ReportIssue />
-            </ProtectedRoute>
-          } />
-          <Route path="/leaderboard" element={
-            <ProtectedRoute allowedRoles={['Student', 'Admin']}>
-              <Leaderboard />
-            </ProtectedRoute>
-          } />
+            {/* Student Access */}
+            <Route path="/dashboard" element={<ProtectedRoute allowedRoles={['Student']}><Dashboard /></ProtectedRoute>} />
+            <Route path="/report" element={<ProtectedRoute allowedRoles={['Student']}><ReportIssue /></ProtectedRoute>} />
+            
+            {/* Shared Access */}
+            <Route path="/leaderboard" element={<ProtectedRoute allowedRoles={['Student', 'Admin', 'SuperAdmin']}><Leaderboard /></ProtectedRoute>} />
 
-          {/* Admin Exclusive Routes */}
-          <Route path="/admin" element={
-            <ProtectedRoute allowedRoles={['Admin']}>
-              <AdminFeed />
-            </ProtectedRoute>
-          } />
+            {/* Admin Access */}
+            <Route path="/admin" element={<ProtectedRoute allowedRoles={['Admin']}><AdminFeed /></ProtectedRoute>} />
 
-          {/* Campus Features */}
-          <Route path="/map" element={
-            <ProtectedRoute>
-              <IssueMap />
-            </ProtectedRoute>
-          } />
-
-          {/* Community Features */}
-          <Route path="/lost-found" element={
-            <ProtectedRoute>
-              <LostFound />
-            </ProtectedRoute>
-          } />
-        </Routes>
+            {/* SuperAdmin/Principal Access */}
+            <Route path="/super-dashboard" element={<ProtectedRoute allowedRoles={['SuperAdmin']}><SuperAdminDashboard /></ProtectedRoute>} />
+            <Route path="/manage-users" element={<ProtectedRoute allowedRoles={['SuperAdmin']}><UserManagement /></ProtectedRoute>} />
+          </Routes>
+        </div>
       </Router>
-    </AuthProvider >
+    </AuthProvider>
   );
 }
-
 export default App;

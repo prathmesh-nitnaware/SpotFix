@@ -36,7 +36,7 @@ const ActivitySchema = new mongoose.Schema({
   // Real-Time Status & Priority
   status: {
     type: String,
-    enum: ['Pending', 'Processing', 'Working', 'Completed'],
+    enum: ['Pending', 'Processing', 'Working', 'Completed', 'Resolved'],
     default: 'Pending'
   },
   priority: {
@@ -54,6 +54,29 @@ const ActivitySchema = new mongoose.Schema({
     type: Number,
     default: 0
   }, // For Leaderboard tracking
+
+  // Staff assignment and proof
+  assignedTo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    default: null
+  },
+  proofImage: {
+    type: String,
+    default: null
+  },
+  staffNote: {
+    type: String,
+    default: null
+  },
+  escalationFlag: {
+    type: Boolean,
+    default: false
+  },
+  escalationNote: {
+    type: String,
+    default: null
+  },
 
   // Analytics Fields
   createdAt: {

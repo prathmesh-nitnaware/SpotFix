@@ -1,4 +1,4 @@
-    import React, { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
@@ -19,8 +19,11 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
     return <Navigate to="/" state={{ from: location }} replace />;
   }
 
-  // If the user's role isn't authorized for this page
+  // If the user's role isn't authorized for this page, send them to their role's home
   if (allowedRoles && !allowedRoles.includes(user.role)) {
+    if (user.role === 'SuperAdmin') return <Navigate to="/super-dashboard" replace />;
+    if (user.role === 'Admin') return <Navigate to="/admin" replace />;
+    if (user.role === 'Staff') return <Navigate to="/staff-dashboard" replace />;
     return <Navigate to="/dashboard" replace />;
   }
 

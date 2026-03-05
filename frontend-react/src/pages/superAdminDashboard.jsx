@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import API from '../api/axios';
-import { BarChart3, AlertCircle, CheckCircle, Map } from 'lucide-react';
+import { BarChart3, AlertCircle, CheckCircle, Map, Users } from 'lucide-react';
 
 const SuperAdminDashboard = () => {
   const [stats, setStats] = useState({ summary: {}, departmentBreakdown: [] });
@@ -17,9 +18,18 @@ const SuperAdminDashboard = () => {
 
   return (
     <div className="p-8 bg-slate-50 min-h-screen ml-64">
-      <header className="mb-8">
-        <h1 className="text-3xl font-black text-gray-800">Global Overview</h1>
-        <p className="text-gray-500">School-wide infrastructure and issue analytics</p>
+      <header className="mb-8 flex justify-between items-end">
+        <div>
+          <h1 className="text-3xl font-black text-gray-800">Global Overview</h1>
+          <p className="text-gray-500">School-wide infrastructure and issue analytics</p>
+        </div>
+
+        <Link
+          to="/manage-users"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all shadow-md shadow-blue-200"
+        >
+          <Users size={18} /> Manage Roles & Users
+        </Link>
       </header>
 
       {/* Metric Cards */}

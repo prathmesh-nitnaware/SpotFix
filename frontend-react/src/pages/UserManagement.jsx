@@ -19,8 +19,8 @@ const UserManagement = () => {
   const handleUpdate = async (userId, field, value) => {
     try {
       const userToUpdate = users.find(u => u._id === userId);
-      const payload = { 
-        userId, 
+      const payload = {
+        userId,
         department: field === 'department' ? value : userToUpdate.department,
         role: field === 'role' ? value : userToUpdate.role
       };
@@ -50,18 +50,19 @@ const UserManagement = () => {
                 <td className="px-6 py-4 font-semibold text-gray-800">{user.name}</td>
                 <td className="px-6 py-4 text-gray-500 text-sm">{user.email}</td>
                 <td className="px-6 py-4">
-                  <select 
-                    value={user.role} 
+                  <select
+                    value={user.role}
                     onChange={(e) => handleUpdate(user._id, 'role', e.target.value)}
                     className="bg-gray-50 border-none rounded-lg text-sm p-2 focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="Student">Student</option>
                     <option value="Admin">Admin</option>
+                    <option value="Staff">Staff</option>
                   </select>
                 </td>
                 <td className="px-6 py-4">
-                  <select 
-                    value={user.department} 
+                  <select
+                    value={user.department}
                     onChange={(e) => handleUpdate(user._id, 'department', e.target.value)}
                     className="bg-gray-50 border-none rounded-lg text-sm p-2 focus:ring-2 focus:ring-blue-500"
                   >

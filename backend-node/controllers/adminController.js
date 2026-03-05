@@ -15,7 +15,7 @@ exports.updateIssueStatus = async (req, res) => {
     const { issueId, status } = req.body;
     try {
         const updateData = { status };
-        if (status === 'Completed') {
+        if (status === 'Resolved') {
             updateData.resolvedAt = Date.now();
         }
 
@@ -26,8 +26,8 @@ exports.updateIssueStatus = async (req, res) => {
             { new: true }
         ).populate('reporter');
 
-        // Handle gamification and notification if completed
-        if (status === 'Completed' && issue.reporter) {
+        // Handle gamification and notification if formally resolved
+        if (status === 'Resolved' && issue.reporter) {
             const pointsToAward = issue.priority === 'High' ? 50 : 20;
 
             // Update user points
@@ -58,6 +58,25 @@ exports.updateIssueStatus = async (req, res) => {
         }
 
         // Broadcast status update for admin board
+        if (req.app.get('socketio')) {
+            req.app.get('socketio').emit('issue-status-updated', issue);
+        }
+
+        res.status(200).json(issue);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+exports.assignTask = async (req, res) => {
+    const { issueId, staffId } = req.body;
+    try {
+        const issue = await Activity.findByIdAndUpdate(
+            issueId,
+            { assignedTo: staffId, status: 'In Progress', escalationFlag: false, escalationNote: null },
+            { new: true }
+        ).populate('reporter');
+
         if (req.app.get('socketio')) {
             req.app.get('socketio').emit('issue-status-updated', issue);
         }

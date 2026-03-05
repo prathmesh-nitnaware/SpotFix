@@ -9,6 +9,7 @@ const authRoutes = require('./routes/authRoutes');
 const issueRoutes = require('./routes/issueRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const superAdminRoutes = require('./routes/superAdminRoutes'); // New route
+const staffRoutes = require('./routes/staffRoutes'); // Staff Mobile Workload Route
 
 // Load environment variables dynamically
 dotenv.config();
@@ -24,6 +25,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/issues', issueRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/superadmin', superAdminRoutes); // Registered for Principal tasks
+app.use('/api/staff', staffRoutes);
 
 app.set('socketio', io);
 

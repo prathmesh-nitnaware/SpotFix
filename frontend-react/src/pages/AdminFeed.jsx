@@ -427,26 +427,51 @@ const AdminFeed = () => {
                             <span className="flex items-center gap-1 bg-slate-50 px-1.5 py-0.5 rounded"><Clock size={10} /> {new Date(issue.createdAt).toLocaleDateString()}</span>
                           </div>
 
+                          {/* Staff Proof rendering */}
+                          {(issue.proofImage || issue.staffNote) && (
+                            <div className="mb-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                              <p className="text-[10px] font-black uppercase text-slate-400 mb-1 flex items-center gap-1">
+                                <CheckCircle2 size={12} className="text-emerald-500" /> Staff Output
+                              </p>
+                              {issue.staffNote && <p className="text-xs text-slate-700 italic border-l-2 border-emerald-300 pl-2 mb-2">"{issue.staffNote}"</p>}
+                              {issue.proofImage && <a href={issue.proofImage} target="_blank" rel="noreferrer"><img src={issue.proofImage} alt="Fix Proof" className="h-20 w-full object-cover rounded-lg border border-slate-200" /></a>}
+                            </div>
+                          )}
+
+                          {/* Escalation rendering */}
+                          {issue.escalationFlag && (
+                            <div className="mb-4 bg-red-50 p-3 rounded-xl border border-red-100">
+                              <p className="text-[10px] font-black uppercase text-red-600 mb-1 flex items-center gap-1">
+                                <AlertCircle size={12} /> Staff Escalation
+                              </p>
+                              <p className="text-xs text-red-900 leading-tight">"{issue.escalationNote}"</p>
+                            </div>
+                          )}
+
                           {/* Assign & Move Actions */}
                           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
                             {/* Staff Select */}
                             {colStatus !== 'Completed' ? (
-                              <select
-                                className="text-[10px] font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 outline-none"
-                                value={issue.assignedTo?._id || ""}
-                                onChange={(e) => handleAssign(issue._id, e.target.value)}
-                              >
-                                <option value="">Unassigned</option>
-                                {staff.map(s => <option key={s._id} value={s._id}>{s.name} ({s.activeTickets})</option>)}
-                              </select>
+                              <div className="flex flex-col gap-1 w-full mr-2">
+                                <select
+                                  className="text-[10px] font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 outline-none w-full"
+                                  value={issue.assignedTo?._id || issue.assignedTo || ""}
+                                  onChange={(e) => handleAssign(issue._id, e.target.value)}
+                                >
+                                  <option value="">Unassigned</option>
+                                  {staff.map(s => <option key={s._id} value={s._id}>{s.name} ({s.activeTickets})</option>)}
+                                </select>
+                                {issue.assignedTo && <span className="text-[9px] font-bold text-indigo-500">Tech Assigned</span>}
+                              </div>
                             ) : (
-                              <span className="text-[10px] font-black text-emerald-500 flex items-center gap-1"><CheckCircle2 size={12} /> Resolved</span>
+                              <button onClick={() => handleStatusUpdate(issue._id, 'Resolved')} className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold py-1.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                                <CheckCircle2 size={14} /> Verify & Resolve
+                              </button>
                             )}
 
                             {/* Quick Move Arrows */}
-                            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity ml-auto">
                               {colStatus !== 'Pending' && <button onClick={() => handleStatusUpdate(issue._id, colStatus === 'Completed' ? 'In Progress' : 'Pending')} className="p-1 bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><ArrowLeft size={14} /></button>}
-                              {colStatus !== 'Completed' && <button onClick={() => handleStatusUpdate(issue._id, colStatus === 'Pending' ? 'In Progress' : 'Completed')} className="p-1 bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><ArrowRight size={14} /></button>}
                             </div>
                           </div>
                         </motion.div>

@@ -13,7 +13,7 @@ exports.postItem = async (req, res) => {
       category: 'Community', // Used to filter Lost & Found from Repairs
       location,
       imageUrl, // Visual evidence for the community
-      type, // 'Lost' or 'Found'
+      type, 
       reporter: req.user.id,
       status: 'Pending'
     });

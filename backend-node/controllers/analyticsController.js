@@ -1,5 +1,5 @@
 const Activity = require('../models/Activity');
-const User = require('../models/User');
+const User = require('../models/user');
 
 /**
  * Aggregates data for the Basic Analytics Dashboard

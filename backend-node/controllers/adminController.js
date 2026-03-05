@@ -1,5 +1,5 @@
 const Activity = require('../models/Activity');
-const User = require('../models/User');
+const User = require('../models/user');
 const { sendResolutionEmail } = require('../services/emailService');
 
 exports.getAllIssues = async (req, res) => {

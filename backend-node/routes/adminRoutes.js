@@ -1,11 +1,19 @@
 const express = require('express');
 const router = express.Router();
+
 const { updateIssueStatus, getAllIssues, assignTask } = require('../controllers/adminController');
 const { getAllUsers } = require('../controllers/adminUserController');
+const { aiPrioritize, summarizeToday, detectPatterns } = require('../controllers/aicontroller');
+
 const { protect, authorize } = require('../middleware/authMiddleware');
 
+
+// ==============================
+// ISSUE MANAGEMENT ROUTES
+// ==============================
+
 // Get all issues for the Admin Feed
-// Allowed for both Admin (Department level) and SuperAdmin (Principal level), and Student (Campus Pulse view)
+// Allowed for Admin, SuperAdmin, and Student (Campus Pulse view)
 router.get(
   '/all-issues',
   protect,
@@ -29,6 +37,11 @@ router.put(
   assignTask
 );
 
+
+// ==============================
+// USER MANAGEMENT ROUTES
+// ==============================
+
 // View user rankings and impact points
 router.get(
   '/users',
@@ -36,5 +49,35 @@ router.get(
   authorize('Admin', 'SuperAdmin', 'Student'),
   getAllUsers
 );
+
+
+// ==============================
+// AI ANALYTICS ROUTES
+// ==============================
+
+// AI: Prioritize issues using ML model
+router.get(
+  '/ai-prioritize',
+  protect,
+  authorize('Admin', 'SuperAdmin'),
+  aiPrioritize
+);
+
+// AI: Generate today's summary of issues
+router.get(
+  '/summarize-today',
+  protect,
+  authorize('Admin', 'SuperAdmin'),
+  summarizeToday
+);
+
+// AI: Detect recurring patterns in campus issues
+router.get(
+  '/detect-patterns',
+  protect,
+  authorize('Admin', 'SuperAdmin'),
+  detectPatterns
+);
+
 
 module.exports = router;

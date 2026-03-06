@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import {
-  Camera, MapPin, Send, X, ChevronRight, Info, Building, Map, Lightbulb, Droplets, Grid, MonitorSmartphone
+  Camera, MapPin, Send, X, ChevronRight, Info, Building, Map, Lightbulb, Droplets, Grid, MonitorSmartphone, MoreHorizontal
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import API from '../api/axios';
@@ -12,7 +12,8 @@ const CAT_ICONS = {
   'Plumbing': <Droplets size={24} />,
   'Furniture': <Grid size={24} />,
   'IT Support': <MonitorSmartphone size={24} />,
-  'Cleaning': <Info size={24} /> // fallback icon
+  'Cleaning': <Info size={24} />,
+  'Other': <MoreHorizontal size={24} />
 };
 
 const ReportIssue = () => {
@@ -28,7 +29,7 @@ const ReportIssue = () => {
     location: { building: '', floor: '', room: '' }
   });
 
-  const categories = ['Electrical', 'Plumbing', 'Furniture', 'IT Support', 'Cleaning'];
+  const categories = ['Electrical', 'Plumbing', 'Furniture', 'IT Support', 'Cleaning', 'Other'];
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -92,7 +93,7 @@ const ReportIssue = () => {
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex items-center gap-2">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${step === s ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-110' :
-                    step > s ? 'bg-blue-100 text-blue-600' : 'bg-slate-200 text-slate-400'
+                  step > s ? 'bg-blue-100 text-blue-600' : 'bg-slate-200 text-slate-400'
                   }`}>
                   {s}
                 </div>
@@ -128,8 +129,8 @@ const ReportIssue = () => {
                           type="button"
                           onClick={() => setFormData({ ...formData, category: cat })}
                           className={`flex flex-col items-center justify-center p-6 rounded-2xl border-2 transition-all gap-3 ${formData.category === cat
-                              ? 'border-blue-600 bg-blue-50 text-blue-700 shadow-sm'
-                              : 'border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-600'
+                            ? 'border-blue-600 bg-blue-50 text-blue-700 shadow-sm'
+                            : 'border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-600'
                             }`}
                         >
                           <div className={formData.category === cat ? 'text-blue-600' : 'text-slate-400'}>
@@ -188,10 +189,15 @@ const ReportIssue = () => {
                           onChange={(e) => setFormData({ ...formData, location: { ...formData.location, building: e.target.value } })}
                         >
                           <option value="">Block / Building</option>
-                          <option value="Main Block">Main Block</option>
-                          <option value="M-Block">M-Block</option>
-                          <option value="Hostel A">Hostel A</option>
-                          <option value="Hostel B">Hostel B</option>
+                          <option value="L Block">L Block</option>
+                          <option value="M Block">M Block</option>
+                          <option value="A Block">A Block</option>
+                          <option value="B Block">B Block</option>
+                          <option value="F Block">F Block</option>
+                          <option value="E Block">E Block</option>
+                          <option value="DEN">DEN</option>
+                          <option value="Ground 1">Ground 1</option>
+                          <option value="Ground 2">Ground 2</option>
                         </select>
                       </div>
                       <input

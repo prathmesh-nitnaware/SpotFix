@@ -13,7 +13,7 @@ const Signup = () => {
     role: 'Student', // Default role based on requirements
     department: ''
   });
-  
+
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] p-4 py-12">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-md w-full"
@@ -43,32 +43,18 @@ const Signup = () => {
           </div>
 
           <form onSubmit={handleSignup} className="space-y-4">
-            {/* Role Toggle */}
-            <div className="flex bg-slate-100 p-1 rounded-xl mb-6">
-              {['Student', 'Admin'].map((role) => (
-                <button
-                  key={role}
-                  type="button"
-                  onClick={() => setFormData({ ...formData, role })}
-                  className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${
-                    formData.role === role ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500'
-                  }`}
-                >
-                  {role}
-                </button>
-              ))}
-            </div>
+
 
             {/* Name */}
             <div>
               <div className="relative">
                 <User className="absolute left-3 top-3.5 text-slate-400" size={18} />
-                <input 
-                  type="text" 
-                  placeholder="Full Name" 
+                <input
+                  type="text"
+                  placeholder="Full Name"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  required 
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
                 />
               </div>
             </div>
@@ -77,12 +63,12 @@ const Signup = () => {
             <div>
               <div className="relative">
                 <Mail className="absolute left-3 top-3.5 text-slate-400" size={18} />
-                <input 
-                  type="email" 
-                  placeholder="name@vit.edu.in" 
+                <input
+                  type="email"
+                  placeholder="name@vit.edu.in"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required 
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
                 />
               </div>
             </div>
@@ -91,12 +77,12 @@ const Signup = () => {
             <div>
               <div className="relative">
                 <Building className="absolute left-3 top-3.5 text-slate-400" size={18} />
-                <input 
-                  type="text" 
-                  placeholder="Department (e.g. CMPN)" 
+                <input
+                  type="text"
+                  placeholder="Department (e.g. CMPN)"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  onChange={(e) => setFormData({...formData, department: e.target.value})}
-                  required 
+                  onChange={(e) => setFormData({ ...formData, department: e.target.value })}
+                  required
                 />
               </div>
             </div>
@@ -105,18 +91,18 @@ const Signup = () => {
             <div>
               <div className="relative">
                 <Lock className="absolute left-3 top-3.5 text-slate-400" size={18} />
-                <input 
-                  type="password" 
-                  placeholder="Create Password" 
+                <input
+                  type="password"
+                  placeholder="Create Password"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  onChange={(e) => setFormData({...formData, password: e.target.value})}
-                  required 
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  required
                 />
               </div>
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="w-full bg-slate-900 hover:bg-black text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98] mt-4"
             >
               Get Started <ArrowRight size={18} />
@@ -129,7 +115,7 @@ const Signup = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="flex items-center justify-center gap-2 mt-8 text-slate-400">
           <Shield size={14} />
           <span className="text-[10px] font-bold uppercase tracking-widest">Architects Security Protocol</span>

@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Bell, Search, User, ChevronDown, CheckCircle2, AlertCircle, Bot, Zap,
   TrendingUp, Activity, BarChart3, Clock, MapPin, Loader2, Download,
-  MessageSquare, Users, ShieldAlert, FileText, Check, ArrowRight, ArrowLeft
+  MessageSquare, Users, ShieldAlert, FileText, Check, ArrowRight, ArrowLeft, X
 } from 'lucide-react';
 import {
-  PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar
+  PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, Legend
 } from 'recharts';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -34,7 +34,7 @@ const createCustomMarker = (priority) => {
   const color = colors[priority] || colors['Medium'];
   return L.divIcon({
     className: 'custom-div-icon',
-    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); ${priority === 'High' || priority === 'Critical' ? 'animation: pulse 2s infinite;' : ''}"></div>`,
+    html: `< div style = "background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); ${priority === 'High' || priority === 'Critical' ? 'animation: pulse 2s infinite;' : ''}" ></div > `,
     iconSize: [24, 24],
     iconAnchor: [12, 12]
   });
@@ -66,17 +66,27 @@ const AdminFeed = () => {
   const [analyzing, setAnalyzing] = useState({ prioritize: false, summary: false, patterns: false });
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [showResolved, setShowResolved] = useState(false);
+
+  const fetchStaffWorkload = async () => {
+    try {
+      const res = await API.get('/admin/staff-workload');
+      setStaff(res.data || []);
+    } catch (err) {
+      console.error("Error fetching staff workload:", err);
+      setStaff([]);
+    }
+  };
 
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const [issuesRes, staffRes] = await Promise.all([
+        const [issuesRes] = await Promise.all([
           API.get('/admin/all-issues'),
-          API.get('/admin/staff-workload').catch(() => ({ data: [] }))
+          fetchStaffWorkload() // Call the new function
         ]);
         const sortedIssues = (issuesRes.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setIssues(sortedIssues);
-        setStaff(staffRes.data || []);
       } catch (err) {
         console.error("Dashboard init error:", err);
       } finally {
@@ -90,12 +100,18 @@ const AdminFeed = () => {
 
     newSocket.on('new-issue', (issue) => {
       setIssues(prev => [issue, ...prev]);
-      addToFeed(`🔴 New ${issue.priority || 'Medium'} priority issue reported in ${issue.location?.building}`, 'alert');
+      addToFeed(`🔴 New ${issue.priority || 'Medium'} priority issue reported in ${issue.location?.building} `, 'alert');
     });
 
     newSocket.on('issue-status-updated', (updatedIssue) => {
       setIssues(prev => prev.map(i => i._id === updatedIssue._id ? updatedIssue : i));
-      addToFeed(`✅ Issue "${updatedIssue.title}" status changed to ${updatedIssue.status}`, 'success');
+      addToFeed(`✅ Issue "${updatedIssue.title}" status changed to ${updatedIssue.status} `, 'success');
+    });
+
+    newSocket.on('issue-assigned', (updatedIssue) => {
+      setIssues(prev => prev.map(i => i._id === updatedIssue._id ? updatedIssue : i));
+      addToFeed(`👨‍🔧 Issue "${updatedIssue.title}" assigned to ${updatedIssue.assignedTo?.name || 'staff'} `, 'info');
+      fetchStaffWorkload(); // Refresh staff workload after assignment
     });
 
     return () => newSocket.disconnect();
@@ -109,7 +125,7 @@ const AdminFeed = () => {
   const runAIPrioritize = async () => {
     setAnalyzing(p => ({ ...p, prioritize: true }));
     try {
-      const res = await API.post(process.env.VITE_AI_URL ? `${process.env.VITE_AI_URL}/ai-prioritize` : 'http://localhost:8000/ai-prioritize', { issues: issues.filter(i => i.status === 'Pending') });
+      const res = await API.post(process.env.VITE_AI_URL ? `${process.env.VITE_AI_URL} /ai-prioritize` : 'http:/ / localhost: 8000 / ai - prioritize', { issues: issues.filter(i => i.status === 'Pending') });
       setAiRanking(res.data.ranked_issues);
       addToFeed('🤖 AI completed live prioritization of Open issues.', 'system');
     } catch (err) { console.error(err); alert("AI Engine unreachable."); }
@@ -144,10 +160,30 @@ const AdminFeed = () => {
     } catch (err) { console.error(err); }
   };
 
+  // Assign Issue Manually (Override)
   const handleAssign = async (issueId, staffId) => {
     try {
-      await API.put('/admin/assign', { issueId, staffId });
-    } catch (err) { console.error(err); }
+      const res = await API.put('/admin/assign', { issueId, staffId });
+      setIssues(issues.map(i => i._id === issueId ? res.data : i));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Auto Assign via Backend ML/Workload Algorithm
+  const handleAutoAssign = async (issueId) => {
+    try {
+      const res = await API.put('/admin/auto-assign', { issueId });
+      setIssues(issues.map(i => i._id === issueId ? res.data : i));
+      // Refresh staff workload counts after auto-assignment
+      fetchStaffWorkload();
+    } catch (err) {
+      if (err.response && err.response.status === 404) {
+        alert("No staff available in system to auto-assign.");
+      } else {
+        console.error(err);
+      }
+    }
   };
 
   // --- COMPUTED STATS ---
@@ -209,16 +245,7 @@ const AdminFeed = () => {
             </div>
           </div>
 
-          <div className="hidden md:flex flex-1 max-w-xl mx-8 relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-            <input
-              type="text"
-              placeholder="Search globally by ID, location, or reporter..."
-              className="w-full bg-slate-100 border-none rounded-full py-2.5 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-500 font-medium text-sm transition-all shadow-inner"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+
 
           <div className="flex items-center gap-6 relative">
             {/* Live Alert Badge */}
@@ -389,6 +416,12 @@ const AdminFeed = () => {
                   <h3 className="text-lg font-black text-slate-900 flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" /></svg> Active Operations Board</h3>
                   <p className="text-xs text-slate-500 font-medium">Drag or use arrows to move tickets between stages.</p>
                 </div>
+                <button
+                  onClick={() => setShowResolved(true)}
+                  className="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-sm"
+                >
+                  View Resolved Archive
+                </button>
               </div>
 
               <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
@@ -400,7 +433,7 @@ const AdminFeed = () => {
                       <span className="bg-white text-slate-600 text-[10px] font-black px-2 py-0.5 rounded-full border border-slate-200">
                         {issues.filter(i => {
                           if (colStatus === 'In Progress') return i.status === 'Processing' || i.status === 'Working' || i.status === 'In Progress';
-                          if (colStatus === 'Completed') return i.status === 'Resolved' || i.status === 'Completed';
+                          if (colStatus === 'Completed') return i.status === 'Completed';
                           return i.status === colStatus;
                         }).length}
                       </span>
@@ -409,7 +442,7 @@ const AdminFeed = () => {
                       {issues.filter(i => {
                         if (searchQuery && !i.title.toLowerCase().includes(searchQuery.toLowerCase())) return false;
                         if (colStatus === 'In Progress') return i.status === 'Processing' || i.status === 'Working' || i.status === 'In Progress';
-                        if (colStatus === 'Completed') return i.status === 'Resolved' || i.status === 'Completed';
+                        if (colStatus === 'Completed') return i.status === 'Completed';
                         return i.status === colStatus;
                       }).map(issue => (
                         <motion.div layoutId={issue._id} key={issue._id} className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
@@ -450,28 +483,60 @@ const AdminFeed = () => {
 
                           {/* Assign & Move Actions */}
                           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                            {/* Staff Select */}
-                            {colStatus !== 'Completed' ? (
-                              <div className="flex flex-col gap-1 w-full mr-2">
-                                <select
-                                  className="text-[10px] font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 outline-none w-full"
-                                  value={issue.assignedTo?._id || issue.assignedTo || ""}
-                                  onChange={(e) => handleAssign(issue._id, e.target.value)}
+                            {/* Staff Assignment Logic */}
+                            {colStatus === 'Pending' ? (
+                              <div className="flex items-center justify-between w-full pr-2">
+                                <div className="text-[10px] font-bold text-slate-400 italic">Unassigned</div>
+                                <button
+                                  onClick={() => handleStatusUpdate(issue._id, 'Rejected')}
+                                  className="bg-red-50 text-red-600 hover:bg-red-100 px-2 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-sm"
+                                  title="Reject (Invalid Issue)"
                                 >
-                                  <option value="">Unassigned</option>
-                                  {staff.map(s => <option key={s._id} value={s._id}>{s.name} ({s.activeTickets})</option>)}
-                                </select>
-                                {issue.assignedTo && <span className="text-[9px] font-bold text-indigo-500">Tech Assigned</span>}
+                                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                                  <span className="text-[10px] font-bold uppercase tracking-widest">Reject</span>
+                                </button>
+                              </div>
+                            ) : colStatus === 'In Progress' ? (
+                              <div className="flex flex-col gap-1 w-full mr-2">
+                                {!issue.assignedTo ? (
+                                  <button
+                                    onClick={() => handleAutoAssign(issue._id)}
+                                    className="flex items-center justify-center gap-1.5 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 text-xs font-bold py-1.5 px-3 rounded-lg transition-colors w-full"
+                                  >
+                                    <Bot size={14} /> Auto Assign Staff
+                                  </button>
+                                ) : (
+                                  <>
+                                    <select
+                                      className="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg px-2 py-1 outline-none w-full appearance-none pr-6 custom-select-bg"
+                                      value={issue.assignedTo?._id || issue.assignedTo || ""}
+                                      onChange={(e) => handleAssign(issue._id, e.target.value)}
+                                    >
+                                      <option value="">Unassigned</option>
+                                      {staff.map(s => <option key={s._id} value={s._id}>{s.name} ({s.activeTickets} active)</option>)}
+                                    </select>
+                                    <span className="text-[9px] font-black uppercase text-indigo-500 tracking-widest pl-1 mt-0.5">Assigned Tech</span>
+                                  </>
+                                )}
                               </div>
                             ) : (
-                              <button onClick={() => handleStatusUpdate(issue._id, 'Resolved')} className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold py-1.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                              <button onClick={() => handleStatusUpdate(issue._id, 'Resolved')} className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold py-1.5 rounded-lg flex items-center justify-center gap-2 transition-colors mr-2">
                                 <CheckCircle2 size={14} /> Verify & Resolve
                               </button>
                             )}
 
                             {/* Quick Move Arrows */}
-                            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity ml-auto">
-                              {colStatus !== 'Pending' && <button onClick={() => handleStatusUpdate(issue._id, colStatus === 'Completed' ? 'In Progress' : 'Pending')} className="p-1 bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><ArrowLeft size={14} /></button>}
+                            <div className="flex gap-1 transition-opacity ml-auto">
+
+                              {colStatus !== 'Completed' && (
+                                <button
+                                  onClick={() => handleStatusUpdate(issue._id, colStatus === 'Pending' ? 'In Progress' : 'Resolved')}
+                                  className="p-1.5 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-colors tooltip relative group"
+                                  title="Move Right"
+                                >
+                                  <ArrowRight size={16} />
+                                </button>
+                              )}
                             </div>
                           </div>
                         </motion.div>
@@ -529,6 +594,7 @@ const AdminFeed = () => {
                       {statusData.map((e, index) => <Cell key={`cell-${index}`} fill={e.color} />)}
                     </Pie>
                     <RechartsTooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
+                    <Legend verticalAlign="bottom" height={24} wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -538,7 +604,8 @@ const AdminFeed = () => {
                   <BarChart data={categoryData}>
                     <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} />
                     <RechartsTooltip cursor={{ fill: 'transparent' }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }} />
-                    <Bar dataKey="value" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                    <Legend verticalAlign="bottom" height={24} wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }} />
+                    <Bar dataKey="value" name="Issues" fill="#3b82f6" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -578,6 +645,41 @@ const AdminFeed = () => {
           {feed.length === 0 && <p className="text-xs text-slate-400 text-center py-10 font-medium">Awaiting network events...</p>}
         </div>
       </div>
+
+      {/* Resolved Issues Modal */}
+      {showResolved && (
+        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+          <div className="bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <h2 className="text-2xl font-black text-slate-800 flex items-center gap-2">
+                <CheckCircle2 className="text-emerald-500" /> Resolved Archive
+              </h2>
+              <button onClick={() => setShowResolved(false)} className="p-2 bg-white rounded-full hover:bg-slate-200 transition-colors shadow-sm">
+                <X size={20} className="text-slate-500" />
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto custom-scrollbar flex-1 space-y-4">
+              {issues.filter(i => i.status === 'Resolved').length === 0 ? (
+                <p className="text-center text-slate-400 font-bold py-10">No resolved issues yet.</p>
+              ) : (
+                issues.filter(i => i.status === 'Resolved').map(issue => (
+                  <div key={issue._id} className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start justify-between">
+                    <div>
+                      <div className="flex gap-2">
+                        <span className="text-[10px] font-bold text-slate-400">#{issue._id.slice(-4).toUpperCase()}</span>
+                        <span className="text-[10px] font-black uppercase text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Resolved</span>
+                      </div>
+                      <h5 className="font-bold text-sm text-slate-900 leading-tight mt-1 mb-2">{issue.title}</h5>
+                      <p className="text-[10px] font-bold text-slate-500 flex items-center gap-1"><MapPin size={10} /> {issue.location?.building}</p>
+                    </div>
+                    {issue.proofImage && <a href={issue.proofImage} target="_blank" rel="noreferrer"><img src={issue.proofImage} alt="Fix Proof" className="h-16 w-24 object-cover rounded-lg border border-slate-200" /></a>}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

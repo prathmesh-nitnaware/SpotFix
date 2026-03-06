@@ -86,3 +86,62 @@ exports.assignTask = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+exports.getStaffWorkloadAdmin = async (req, res) => {
+    try {
+        const staffUsers = await User.find({ role: 'Staff' }).select('-password');
+        const activities = await Activity.find({ status: { $in: ['In Progress', 'Processing', 'Working'] } });
+
+        const staffPayload = staffUsers.map(staff => {
+            const activeTickets = activities.filter(a => String(a.assignedTo) === String(staff._id)).length;
+            return {
+                _id: staff._id,
+                name: staff.name,
+                department: staff.department || 'General',
+                activeTickets
+            };
+        });
+
+        res.status(200).json(staffPayload);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+exports.autoAssignTask = async (req, res) => {
+    const { issueId } = req.body;
+    try {
+        const issue = await Activity.findById(issueId);
+        if (!issue) return res.status(404).json({ error: "Issue not found" });
+
+        const staffUsers = await User.find({ role: 'Staff' });
+        if (staffUsers.length === 0) return res.status(404).json({ error: "No staff available in system" });
+
+        const activities = await Activity.find({ status: { $in: ['In Progress', 'Processing', 'Working'] } });
+
+        // Calculate workload per staff member
+        const workloads = staffUsers.map(staff => {
+            const load = activities.filter(a => String(a.assignedTo) === String(staff._id)).length;
+            // Additional smart routing: tie-breaker based on department relevance can be injected here
+            return { _id: staff._id, load };
+        });
+
+        // Find the staff with the lowest load
+        workloads.sort((a, b) => a.load - b.load);
+        const bestTech = workloads[0]._id;
+
+        const updatedIssue = await Activity.findByIdAndUpdate(
+            issueId,
+            { assignedTo: bestTech, status: 'In Progress', escalationFlag: false, escalationNote: null },
+            { new: true }
+        ).populate('reporter');
+
+        if (req.app.get('socketio')) {
+            req.app.get('socketio').emit('issue-status-updated', updatedIssue);
+        }
+
+        res.status(200).json(updatedIssue);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};

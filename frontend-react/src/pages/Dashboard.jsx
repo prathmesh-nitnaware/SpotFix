@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import API from '../api/axios';
 import {
-  Search, Plus, Map as MapIcon, Mic, Trophy, Bell, ChevronDown, CheckCircle2, User, Layout, BarChart, Settings, LogOut, FileText, AlertCircle, TrendingUp, Zap, Clock, Package, MapPin, ArrowUpRight, HelpCircle, Flame, ChevronRight, Target, Shield, MessageSquare
+  Search, Plus, Map as MapIcon, Mic, Trophy, Bell, ChevronDown, CheckCircle2, User, Layout, BarChart, Settings, LogOut, FileText, AlertCircle, TrendingUp, Zap, Clock, Package, MapPin, ArrowUpRight, HelpCircle, Flame, ChevronRight, Target, Shield, MessageSquare, X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +23,7 @@ const Dashboard = () => {
   const [notifications, setNotifications] = useState([
     { id: 1, text: "Welcome to FixIt Campus! Start reporting to earn Impact Points.", time: "Just now", read: false },
   ]);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -111,24 +112,59 @@ const Dashboard = () => {
           <span className="font-black text-xl tracking-tight text-slate-800">SpotFix</span>
         </div>
 
-        <div className="hidden md:flex flex-1 max-w-xl mx-8 relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-          <input
-            type="text"
-            placeholder="Search any issue by keyword or ID..."
-            className="w-full bg-slate-100 border-none rounded-full py-2.5 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-500 font-medium text-sm transition-all"
-          />
-        </div>
+
 
         <div className="flex items-center gap-6 relative">
-          <button className="relative text-slate-500 hover:text-blue-600 transition-colors">
-            <Bell size={22} />
-            {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-black w-4 h-4 flex items-center justify-center rounded-full border-2 border-white">
-                {unreadCount}
-              </span>
-            )}
-          </button>
+          <div className="relative">
+            <button onClick={() => setShowNotifications(!showNotifications)} className="relative text-slate-500 hover:text-blue-600 transition-colors">
+              <Bell size={22} />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-black w-4 h-4 flex items-center justify-center rounded-full border-2 border-white">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
+            <AnimatePresence>
+              {showNotifications && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute right-0 mt-3 w-80 bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden py-2 z-50 flex flex-col max-h-[70vh]"
+                >
+                  <div className="px-4 py-3 border-b border-slate-50 flex justify-between items-center bg-slate-50">
+                    <span className="font-black text-sm text-slate-800">Notifications</span>
+                    <span className="bg-blue-100 text-blue-600 text-[10px] font-black px-2 py-0.5 rounded-full">{unreadCount} New</span>
+                  </div>
+                  <div className="overflow-y-auto custom-scrollbar flex-1">
+                    {notifications.length === 0 ? (
+                      <p className="text-center text-slate-400 font-bold py-6 text-xs">No notifications yet.</p>
+                    ) : (
+                      notifications.map(n => (
+                        <div key={n.id} className={`px-4 py-3 border-b border-slate-50 flex gap-3 relative group ${!n.read ? 'bg-blue-50/50' : ''}`}>
+                          <div className="mt-1">
+                            {n.read ? <CheckCircle2 size={14} className="text-slate-300" /> : <div className="w-2 h-2 rounded-full bg-blue-500 mt-1"></div>}
+                          </div>
+                          <div className="flex-1 pr-6">
+                            <p className={`text-xs ${!n.read ? 'font-bold text-slate-800' : 'font-medium text-slate-600'}`}>{n.text}</p>
+                            <p className="text-[10px] font-bold text-slate-400 mt-1">{n.time}</p>
+                          </div>
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setNotifications(prev => prev.filter(notif => notif.id !== n.id)); }}
+                            className="absolute right-2 top-3 opacity-0 group-hover:opacity-100 p-1.5 text-slate-400 hover:bg-slate-100 hover:text-red-500 rounded-lg transition-all"
+                            title="Delete"
+                          >
+                            <X size={14} />
+                          </button>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <div className="relative">
             <button
@@ -150,8 +186,7 @@ const Dashboard = () => {
                   className="absolute right-0 mt-3 w-48 bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden py-2 z-50"
                 >
                   <button onClick={() => { }} className="w-full text-left px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50">Profile</button>
-                  <button onClick={() => { }} className="w-full text-left px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50">My Badges</button>
-                  <button onClick={() => { }} className="w-full text-left px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50">Settings</button>
+
                   <div className="h-px bg-slate-100 my-2"></div>
                   <button onClick={logout} className="w-full text-left px-4 py-2 text-sm font-bold text-red-600 hover:bg-red-50">Logout</button>
                 </motion.div>

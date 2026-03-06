@@ -4,7 +4,10 @@ const User = require('../models/user');
 exports.getMyWorkload = async (req, res) => {
     try {
         const staffId = req.user.id;
-        const issues = await Activity.find({ assignedTo: staffId })
+        const issues = await Activity.find({
+            assignedTo: staffId,
+            status: { $nin: ['Completed', 'Resolved', 'Rejected'] }
+        })
             .populate('reporter', 'name email department')
             .sort({ priority: 1, createdAt: 1 }); // Urgent first, then oldest
         res.status(200).json(issues);

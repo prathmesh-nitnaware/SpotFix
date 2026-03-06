@@ -61,10 +61,10 @@ const LostFound = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-8 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${activeTab === tab
-                    ? tab === 'Lost' ? 'bg-red-500 text-white shadow-md shadow-red-200'
-                      : tab === 'Found' ? 'bg-green-500 text-white shadow-md shadow-green-200'
-                        : 'bg-slate-900 text-white shadow-md'
-                    : 'bg-transparent text-slate-500 hover:bg-slate-50'
+                  ? tab === 'Lost' ? 'bg-red-500 text-white shadow-md shadow-red-200'
+                    : tab === 'Found' ? 'bg-green-500 text-white shadow-md shadow-green-200'
+                      : 'bg-slate-900 text-white shadow-md'
+                  : 'bg-transparent text-slate-500 hover:bg-slate-50'
                   }`}
               >
                 {tab} Items
@@ -72,14 +72,7 @@ const LostFound = () => {
             ))}
           </div>
 
-          <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-            <input
-              type="text"
-              placeholder="Search for keys, laptop, id card..."
-              className="w-full h-full p-4 pl-12 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-orange-500 font-medium transition-all shadow-sm focus:shadow-md"
-            />
-          </div>
+
         </div>
 
         {/* Items Grid */}

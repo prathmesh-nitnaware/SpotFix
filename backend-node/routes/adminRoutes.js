@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { updateIssueStatus, getAllIssues, assignTask } = require('../controllers/adminController');
+const { updateIssueStatus, getAllIssues, assignTask, getStaffWorkloadAdmin, autoAssignTask } = require('../controllers/adminController');
 const { getAllUsers } = require('../controllers/adminUserController');
 const { aiPrioritize, summarizeToday, detectPatterns } = require('../controllers/aicontroller');
 
@@ -37,6 +37,21 @@ router.put(
   assignTask
 );
 
+// Get staff workload overview for allocation
+router.get(
+  '/staff-workload',
+  protect,
+  authorize('Admin', 'SuperAdmin'),
+  getStaffWorkloadAdmin
+);
+
+// Auto-assign issue to best tech
+router.put(
+  '/auto-assign',
+  protect,
+  authorize('Admin', 'SuperAdmin'),
+  autoAssignTask
+);
 
 // ==============================
 // USER MANAGEMENT ROUTES

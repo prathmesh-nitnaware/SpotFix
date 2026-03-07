@@ -12,7 +12,7 @@ exports.reportIssue = async (req, res) => {
       'location.building': location.building,
       'location.floor': location.floor,
       'location.room': location.room,
-      status: { $ne: 'Completed' }
+      status: { $in: ['Pending', 'In Progress', 'Processing', 'Working'] }
     });
 
     if (existing) {

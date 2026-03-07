@@ -12,6 +12,8 @@ import Leaderboard from './pages/Leaderboard';
 import SuperAdminDashboard from './pages/SuperAdminDashboard'; // New
 import UserManagement from './pages/UserManagement'; // New
 import StaffDashboard from './pages/StaffDashboard'; // New Staff Mobile View
+import LostFound from './pages/LostFound';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
@@ -21,7 +23,8 @@ function App() {
           {/* Sidebar logic is handled inside the component based on auth state */}
           <div className="flex-1 w-full">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
 
               {/* Student Access */}
@@ -30,6 +33,7 @@ function App() {
 
               {/* Shared Access */}
               <Route path="/leaderboard" element={<ProtectedRoute allowedRoles={['Student', 'Admin', 'SuperAdmin', 'Staff']}><Leaderboard /></ProtectedRoute>} />
+              <Route path="/lost-found" element={<ProtectedRoute allowedRoles={['Student', 'Admin', 'SuperAdmin', 'Staff']}><LostFound /></ProtectedRoute>} />
 
               {/* Staff Access */}
               <Route path="/staff-dashboard" element={<ProtectedRoute allowedRoles={['Staff']}><StaffDashboard /></ProtectedRoute>} />

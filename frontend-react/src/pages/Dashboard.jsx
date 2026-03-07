@@ -85,7 +85,7 @@ const Dashboard = () => {
 
   // Stats calculation
   const openIssues = history.filter(i => i.status === 'Pending').length;
-  const inProgress = history.filter(i => i.status === 'Processing' || i.status === 'Working').length;
+  const inProgress = history.filter(i => i.status === 'In Progress' || i.status === 'Processing' || i.status === 'Working').length;
   const resolved = history.filter(i => i.status === 'Completed' || i.status === 'Resolved').length;
 
   const levelProgress = user?.impactPoints ? (user.impactPoints % 100) / 100 * 100 : 0;
@@ -95,7 +95,7 @@ const Dashboard = () => {
   const filteredHistory = history.filter(issue => {
     if (activeTab === 'All') return true;
     if (activeTab === 'Open') return issue.status === 'Pending';
-    if (activeTab === 'In Progress') return issue.status === 'Processing' || issue.status === 'Working';
+    if (activeTab === 'In Progress') return issue.status === 'In Progress' || issue.status === 'Processing' || issue.status === 'Working';
     if (activeTab === 'Resolved') return issue.status === 'Completed' || issue.status === 'Resolved';
     return true;
   }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -387,7 +387,7 @@ const Dashboard = () => {
                       <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 rounded-full z-0"></div>
                       <div
                         className="absolute top-1/2 left-0 h-1 bg-blue-500 -translate-y-1/2 rounded-full z-0 transition-all duration-1000"
-                        style={{ width: issue.status === 'Completed' || issue.status === 'Resolved' ? '100%' : issue.status === 'Processing' || issue.status === 'Working' ? '66%' : '33%' }}
+                        style={{ width: issue.status === 'Completed' || issue.status === 'Resolved' ? '100%' : issue.status === 'In Progress' || issue.status === 'Processing' || issue.status === 'Working' ? '66%' : '33%' }}
                       ></div>
                       <div className="relative z-10 flex justify-between">
                         <div className="bg-blue-500 w-4 h-4 rounded-full border-4 border-white shadow-sm"></div>

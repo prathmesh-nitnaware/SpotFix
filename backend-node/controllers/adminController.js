@@ -114,15 +114,20 @@ exports.autoAssignTask = async (req, res) => {
         const issue = await Activity.findById(issueId);
         if (!issue) return res.status(404).json({ error: "Issue not found" });
 
-        const staffUsers = await User.find({ role: 'Staff' });
-        if (staffUsers.length === 0) return res.status(404).json({ error: "No staff available in system" });
+        let eligibleStaff = await User.find({ role: 'Staff' });
+        if (eligibleStaff.length === 0) return res.status(404).json({ error: "No staff available in system" });
+
+        // Filter staff based on matching category if possible
+        const specialistStaff = eligibleStaff.filter(s => s.staffCategory === issue.category);
+        if (specialistStaff.length > 0) {
+            eligibleStaff = specialistStaff;
+        }
 
         const activities = await Activity.find({ status: { $in: ['In Progress', 'Processing', 'Working'] } });
 
-        // Calculate workload per staff member
-        const workloads = staffUsers.map(staff => {
+        // Calculate workload per eligible staff member
+        const workloads = eligibleStaff.map(staff => {
             const load = activities.filter(a => String(a.assignedTo) === String(staff._id)).length;
-            // Additional smart routing: tie-breaker based on department relevance can be injected here
             return { _id: staff._id, load };
         });
 

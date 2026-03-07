@@ -10,18 +10,18 @@ const Sidebar = () => {
 
   const navItems = {
     Student: [
-      { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20}/> },
-      { name: 'Report Issue', path: '/report', icon: <PlusCircle size={20}/> },
-      { name: 'Leaderboard', path: '/leaderboard', icon: <Trophy size={20}/> },
+      { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20} /> },
+      { name: 'Report Issue', path: '/report', icon: <PlusCircle size={20} /> },
+      { name: 'Leaderboard', path: '/leaderboard', icon: <Trophy size={20} /> },
     ],
     Admin: [
-      { name: 'Command Center', path: '/admin', icon: <ClipboardList size={20}/> },
-      { name: 'Leaderboard', path: '/leaderboard', icon: <Trophy size={20}/> },
+      { name: 'Command Center', path: '/admin', icon: <ClipboardList size={20} /> },
+      { name: 'Leaderboard', path: '/leaderboard', icon: <Trophy size={20} /> },
     ],
     SuperAdmin: [
-      { name: 'Global Overview', path: '/super-dashboard', icon: <ShieldCheck size={20}/> },
-      { name: 'User Records', path: '/manage-users', icon: <Users size={20}/> },
-      { name: 'School Analytics', path: '/analytics', icon: <BarChart3 size={20}/> },
+      { name: 'Global Overview', path: '/super-dashboard', icon: <ShieldCheck size={20} /> },
+      { name: 'User Records', path: '/manage-users', icon: <Users size={20} /> },
+      { name: 'School Analytics', path: '/analytics', icon: <BarChart3 size={20} /> },
     ]
   };
 
@@ -30,7 +30,9 @@ const Sidebar = () => {
   return (
     <div className="h-screen w-64 bg-white border-r border-gray-100 flex flex-col p-6 sticky top-0">
       <div className="flex items-center gap-3 mb-10">
-        <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black">S</div>
+        <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black">
+          <ShieldCheck size={24} />
+        </div>
         <h1 className="text-xl font-black text-gray-800">SpotFix</h1>
       </div>
 

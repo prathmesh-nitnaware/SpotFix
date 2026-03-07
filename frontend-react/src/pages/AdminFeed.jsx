@@ -123,9 +123,16 @@ const AdminFeed = () => {
 
   // --- AI ACTIONS ---
   const runAIPrioritize = async () => {
+    if (aiRanking) {
+      setAiRanking(null);
+      return;
+    }
+    setAiSummary(null);
+    setAiPatterns(null);
+
     setAnalyzing(p => ({ ...p, prioritize: true }));
     try {
-      const res = await API.post(process.env.VITE_AI_URL ? `${process.env.VITE_AI_URL} /ai-prioritize` : 'http:/ / localhost: 8000 / ai - prioritize', { issues: issues.filter(i => i.status === 'Pending') });
+      const res = await API.post(import.meta.env.VITE_AI_URL ? `${import.meta.env.VITE_AI_URL}/ai-prioritize` : 'http://localhost:8000/ai-prioritize', { issues: issues.filter(i => i.status === 'Pending') });
       setAiRanking(res.data.ranked_issues);
       addToFeed('🤖 AI completed live prioritization of Open issues.', 'system');
     } catch (err) { console.error(err); alert("AI Engine unreachable."); }
@@ -133,25 +140,23 @@ const AdminFeed = () => {
   };
 
   const runAISummarize = async () => {
+    if (aiSummary) {
+      setAiSummary(null);
+      return;
+    }
+    setAiRanking(null);
+    setAiPatterns(null);
+
     setAnalyzing(p => ({ ...p, summary: true }));
     try {
       const recent = issues.filter(i => new Date(i.createdAt) > new Date(Date.now() - 86400000));
-      const res = await API.post(process.env.VITE_AI_URL ? `${process.env.VITE_AI_URL}/summarize-today` : 'http://localhost:8000/summarize-today', { issues: recent });
+      const res = await API.post(import.meta.env.VITE_AI_URL ? `${import.meta.env.VITE_AI_URL}/summarize-today` : 'http://localhost:8000/summarize-today', { issues: recent });
       setAiSummary(res.data.summary);
       addToFeed('📝 AI generated the daily structural summary.', 'system');
     } catch (err) { console.error(err); }
     setAnalyzing(p => ({ ...p, summary: false }));
   };
 
-  const runAIPatterns = async () => {
-    setAnalyzing(p => ({ ...p, patterns: true }));
-    try {
-      const res = await API.post(process.env.VITE_AI_URL ? `${process.env.VITE_AI_URL}/detect-patterns` : 'http://localhost:8000/detect-patterns', { issues });
-      setAiPatterns(res.data.patterns);
-      addToFeed('🔍 AI completed 7-day pattern detection scan.', 'system');
-    } catch (err) { console.error(err); }
-    setAnalyzing(p => ({ ...p, patterns: false }));
-  };
 
   // --- KANBAN LOGIC ---
   const handleStatusUpdate = async (issueId, status) => {
@@ -308,10 +313,6 @@ const AdminFeed = () => {
                 {analyzing.summary ? <Loader2 size={16} className="animate-spin text-blue-400" /> : <FileText size={16} className="text-blue-400" />}
                 Summarize Today
               </button>
-              <button onClick={runAIPatterns} disabled={analyzing.patterns} className="flex-shrink-0 flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-700">
-                {analyzing.patterns ? <Loader2 size={16} className="animate-spin text-blue-400" /> : <Search size={16} className="text-emerald-400" />}
-                Detect Patterns
-              </button>
             </div>
           </div>
 
@@ -321,12 +322,12 @@ const AdminFeed = () => {
               <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} className="mt-4 p-4 bg-slate-800/50 rounded-2xl border border-slate-700 backdrop-blur-sm">
                 <h3 className="text-xs font-black uppercase tracking-widest text-amber-500 mb-3 flex items-center gap-2"><Zap size={12} /> AI Ranked Execution Order</h3>
                 <div className="space-y-2 max-h-40 overflow-y-auto pr-2 custom-scrollbar">
-                  {aiRanking.map((r, i) => (
+                  {aiRanking.slice(0, 5).map((r, i) => (
                     <div key={i} className="flex items-start gap-3 bg-slate-800/80 p-3 rounded-xl border border-slate-700/50">
-                      <div className="bg-slate-900 border border-slate-700 font-mono text-xs px-2 py-1 rounded text-amber-400">#{r.rank}</div>
+                      <div className="bg-slate-900 border border-slate-700 font-mono text-xs px-2 py-1 rounded text-amber-400">#{i + 1}</div>
                       <div>
-                        <p className="font-bold text-sm text-white">{r.issue} <span className="text-slate-400 text-xs font-normal">in {r.location}</span></p>
-                        <p className="text-xs text-slate-400 mt-0.5">{r.reason}</p>
+                        <p className="font-bold text-sm text-white">{r.title} <span className="text-slate-400 text-xs font-normal">in {r.location?.building || 'Campus'}</span></p>
+                        <p className="text-xs text-slate-400 mt-0.5">Priority: {r.priority} | Confidence: {r.confidence}</p>
                       </div>
                     </div>
                   ))}
@@ -336,13 +337,7 @@ const AdminFeed = () => {
             {aiSummary && (
               <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} className="mt-4 p-4 bg-blue-900/20 border border-blue-800/50 rounded-2xl">
                 <h3 className="text-xs font-black uppercase tracking-widest text-blue-400 mb-2 flex items-center gap-2"><FileText size={12} /> 24H Executive Summary</h3>
-                <p className="text-sm text-blue-100 leading-relaxed font-medium">{aiSummary}</p>
-              </motion.div>
-            )}
-            {aiPatterns && (
-              <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} className="mt-4 p-4 bg-emerald-900/20 border border-emerald-800/50 rounded-2xl">
-                <h3 className="text-xs font-black uppercase tracking-widest text-emerald-400 mb-2 flex items-center gap-2"><Search size={12} /> Pattern Detection Result</h3>
-                <p className="text-sm text-emerald-100 leading-relaxed font-medium">{aiPatterns}</p>
+                <p className="text-sm text-blue-100 leading-relaxed font-medium whitespace-pre-wrap">{aiSummary}</p>
               </motion.div>
             )}
           </AnimatePresence>

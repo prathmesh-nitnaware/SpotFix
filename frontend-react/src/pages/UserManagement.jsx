@@ -10,7 +10,8 @@ const UserManagement = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const departments = ['Computer', 'Electrical', 'Office', 'Hostel', 'Canteen'];
+  const departments = ['CMPN', 'INFT', 'EXCS', 'EXTC', 'BIOM'];
+  const staffCategories = ['Electrical', 'Plumbing', 'Furniture', 'IT Support', 'Cleaning', 'Other'];
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -25,13 +26,24 @@ const UserManagement = () => {
   const handleUpdate = async (userId, field, value) => {
     try {
       const userToUpdate = users.find(u => u._id === userId);
-      const payload = {
+
+      let payload = {
         userId,
         department: field === 'department' ? value : userToUpdate.department,
-        role: field === 'role' ? value : userToUpdate.role
+        role: field === 'role' ? value : userToUpdate.role,
+        staffCategory: field === 'staffCategory' ? value : userToUpdate.staffCategory
       };
+
+      // Auto-nullify logic
+      if (payload.role === 'Admin') {
+        payload.department = null;
+        payload.staffCategory = null;
+      } else if (payload.role !== 'Staff') {
+        payload.staffCategory = null; // Only staff have categories
+      }
+
       await API.put('/superadmin/assign-position', payload);
-      setUsers(users.map(u => u._id === userId ? { ...u, [field]: value } : u));
+      setUsers(users.map(u => u._id === userId ? { ...u, ...payload } : u));
     } catch (err) { alert("Update failed"); }
   };
 
@@ -97,7 +109,7 @@ const UserManagement = () => {
                 <th className="px-6 py-4">Name</th>
                 <th className="px-6 py-4">Email</th>
                 <th className="px-6 py-4">Current Role</th>
-                <th className="px-6 py-4">Department</th>
+                <th className="px-6 py-4">Department / Category</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
@@ -117,13 +129,27 @@ const UserManagement = () => {
                     </select>
                   </td>
                   <td className="px-6 py-4">
-                    <select
-                      value={user.department}
-                      onChange={(e) => handleUpdate(user._id, 'department', e.target.value)}
-                      className="bg-gray-50 border-none rounded-lg text-sm p-2 focus:ring-2 focus:ring-blue-500"
-                    >
-                      {departments.map(d => <option key={d} value={d}>{d}</option>)}
-                    </select>
+                    {user.role === 'Admin' ? (
+                      <span className="text-sm font-bold text-slate-400 italic bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 block text-center">Global Admin (N/A)</span>
+                    ) : user.role === 'Staff' ? (
+                      <select
+                        value={user.staffCategory || ""}
+                        onChange={(e) => handleUpdate(user._id, 'staffCategory', e.target.value)}
+                        className="bg-indigo-50 text-indigo-700 font-bold border border-indigo-100 rounded-lg text-sm p-2 w-full focus:ring-2 focus:ring-indigo-500 transition-colors"
+                      >
+                        <option value="" disabled>Select Tech Trade</option>
+                        {staffCategories.map(c => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                    ) : (
+                      <select
+                        value={user.department || ""}
+                        onChange={(e) => handleUpdate(user._id, 'department', e.target.value)}
+                        className="bg-gray-50 border-none rounded-lg text-sm p-2 w-full focus:ring-2 focus:ring-blue-500 transition-colors"
+                      >
+                        <option value="" disabled>Select Dept</option>
+                        {departments.map(d => <option key={d} value={d}>{d}</option>)}
+                      </select>
+                    )}
                   </td>
                 </tr>
               ))}

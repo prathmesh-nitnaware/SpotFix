@@ -9,7 +9,16 @@ const UserSchema = new mongoose.Schema({
     enum: ["Student", "Admin", "SuperAdmin", "Staff"],
     default: "Student",
   },
-  department: { type: String, required: true }, // e.g., 'Computer', 'Office', or 'All' for SuperAdmin
+  department: {
+    type: String,
+    enum: ["CMPN", "INFT", "EXCS", "EXTC", "BIOM"],
+    required: false
+  },
+  staffCategory: {
+    type: String,
+    enum: ["Electrical", "Plumbing", "Furniture", "IT Support", "Cleaning", "Other"],
+    required: false
+  },
   impactPoints: { type: Number, default: 0 },
   level: { type: Number, default: 1 },
   achievements: [

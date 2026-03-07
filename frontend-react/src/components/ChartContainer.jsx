@@ -34,16 +34,6 @@ const ChartContainer = ({ title, children, insight, id }) => {
             <div className="flex-1 w-full min-h-[250px]">
                 {children}
             </div>
-
-            {insight && (
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-start gap-3 bg-blue-50/50 p-3 rounded-xl">
-                    <Sparkles size={16} className="text-blue-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                        <span className="font-bold text-slate-800">AI Insight: </span>
-                        {insight}
-                    </p>
-                </div>
-            )}
         </div>
     );
 };

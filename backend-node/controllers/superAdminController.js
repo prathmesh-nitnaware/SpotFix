@@ -16,11 +16,11 @@ exports.getAllRecords = async (req, res) => {
 
 // 2. Assign Department & Role (For new joins or department changes)
 exports.manageUserPosition = async (req, res) => {
-    const { userId, department, role } = req.body;
+    const { userId, department, role, staffCategory } = req.body;
     try {
         const updatedUser = await User.findByIdAndUpdate(
             userId,
-            { department, role },
+            { department, role, staffCategory },
             { new: true }
         ).select('-password');
 
